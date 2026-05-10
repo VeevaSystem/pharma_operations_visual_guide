@@ -1473,9 +1473,10 @@ mark { background: var(--highlight); border-radius: 2px; color: inherit; }
     <span class="cover-pill">HCP Engagement</span>
     <span class="cover-pill">Process Diagrams</span>
     <span class="cover-pill">Roles &amp; Org Structure</span>
+    <span class="cover-pill">Strategy</span>
   </div>
   <div class="cover-meta">
-    12 Chapters · Visual SVG Process Maps · Interactive Glossary · Hover Tooltips<br>
+    13 Chapters · Visual SVG Process Maps · Interactive Glossary · Hover Tooltips<br>
     R&amp;D Regulatory · eTMF · Veeva Vault RIM · Clinical Operations · Market Access<br>
     Commercial Affairs · Medical Affairs · Model N · Anaplan · Veeva Platform Reference<br>
     FDA &amp; ICH Regulatory Frameworks · GxP · 21 CFR · MDRP · 340B · IRA 2022<br>
@@ -10275,7 +10276,7 @@ function searchContent(q) {
     p.normalize();
   });
   if (!q) return;
-  const re = new RegExp(q.replace(/[.*+?^${}()|[\]\]/g, '\$&'), 'gi');
+  const re = new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g, '\$&'), 'gi');
   function walkText(node) {
     if (node.nodeType === 3) {
       if (re.test(node.nodeValue)) {
@@ -10315,6 +10316,27 @@ function filterGloss(q) {
     el.style.display = show ? '' : 'none';
   });
 }
+
+// ── Toolbar collapse toggle
+function toggleControls() {
+  const rc = document.getElementById('reader-controls');
+  rc.classList.toggle('collapsed');
+  const btn = document.getElementById('ctrl-toggle');
+  if (btn) btn.textContent = rc.classList.contains('collapsed') ? '›' : '‹';
+  try { localStorage.setItem('pharma-ctrl-collapsed', rc.classList.contains('collapsed')); } catch(e) {}
+}
+(function () {
+  try {
+    if (localStorage.getItem('pharma-ctrl-collapsed') === 'true') {
+      const rc = document.getElementById('reader-controls');
+      if (rc) {
+        rc.classList.add('collapsed');
+        const btn = document.getElementById('ctrl-toggle');
+        if (btn) btn.textContent = '›';
+      }
+    }
+  } catch(e) {}
+})();
 
 
 // ── Diagram Zoom Modal ────────────────────────────────────────────────────
