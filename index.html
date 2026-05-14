@@ -361,14 +361,42 @@ img, svg { max-width: 100%; }
   position: sticky; top: 0; height: 100vh;
   overflow-y: auto; overflow-x: hidden;
   padding: 28px 18px 32px 22px;
-  transition: background .3s var(--ease);
+  transition: background .3s var(--ease), transform .28s cubic-bezier(.4,0,.2,1), margin-right .28s cubic-bezier(.4,0,.2,1);
   scrollbar-width: thin;
   scrollbar-color: var(--border) transparent;
 }
 .toc::-webkit-scrollbar { width: 4px; }
 .toc::-webkit-scrollbar-track { background: transparent; }
 .toc::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
-
+/* ── Sidebar collapse / full toggle */
+#sidebar-toggle-btn {
+  position: absolute; top: 10px; right: 8px;
+  background: none; border: none; cursor: pointer;
+  color: var(--ink-muted); font-size: 17px;
+  padding: 4px 6px; border-radius: 5px; opacity: .55;
+  transition: opacity .2s, background .2s;
+  line-height: 1; z-index: 10;
+}
+#sidebar-toggle-btn:hover { opacity: 1; background: var(--bg-alt); }
+#sidebar-reopen-btn {
+  display: none;
+  position: fixed; top: 16px; left: 0; z-index: 900;
+  background: var(--bg-toc); border: 1px solid var(--border);
+  border-left: none; border-radius: 0 7px 7px 0;
+  width: 28px; height: 42px;
+  cursor: pointer; color: var(--accent); font-size: 15px;
+  align-items: center; justify-content: center;
+  box-shadow: 3px 0 10px rgba(0,0,0,.13);
+  transition: background .2s, box-shadow .2s;
+}
+#sidebar-reopen-btn:hover { box-shadow: 3px 0 14px rgba(0,0,0,.22); color: var(--navy); }
+/* Collapsed sidebar state — transform avoids layout reflow */
+body.sidebar-collapsed .toc {
+  transform: translateX(-100%);
+  margin-right: calc(-1 * var(--toc-width));
+  pointer-events: none;
+}
+body.sidebar-collapsed #sidebar-reopen-btn { display: flex; }
 
 /* ════════════════════════════════════════════════════════════════════════════
    DICTIONARY BAR + MODAL
@@ -1164,8 +1192,61 @@ mark { background: var(--highlight); border-radius: 2px; color: inherit; }
 @media (max-width: 1100px) {
   :root { --ch-padding-x: 48px; --ch-padding-y: 60px; }
 }
+/* ── Mobile nav button */
+#mob-menu-btn {
+  display: none;
+  position: fixed; top: 14px; left: 14px; z-index: 1100;
+  background: var(--accent); color: #fff;
+  border: none; border-radius: 8px;
+  width: 40px; height: 40px; font-size: 20px;
+  cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,.28);
+  align-items: center; justify-content: center;
+  line-height: 1; transition: background .2s;
+}
+#mob-menu-btn:hover { filter: brightness(1.1); }
+#mob-backdrop {
+  display: none; position: fixed; inset: 0; z-index: 1050;
+  background: rgba(0,0,0,.45);
+}
+/* ── Sidebar collapse / expand */
+.ch-row {
+  display: flex; align-items: center; gap: 2px;
+}
+.ch-row > a {
+  flex: 1; min-width: 0;
+}
+.toc-toggle {
+  flex-shrink: 0; background: none; border: none;
+  cursor: pointer; color: var(--ink-muted);
+  font-size: 13px; padding: 2px 5px; border-radius: 4px;
+  line-height: 1; opacity: .55;
+  transition: transform .22s ease, opacity .2s;
+  transform: rotate(0deg);
+}
+.toc-toggle:hover { opacity: 1; background: var(--bg-alt); }
+.toc-toggle.open { transform: rotate(90deg); opacity: .85; }
+.toc-group {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .22s ease;
+}
+.toc-group > div {
+  min-height: 0;
+  overflow: hidden;
+}
+.toc-group.open { grid-template-rows: 1fr; }
 @media (max-width: 820px) {
-  .toc { display: none; }
+  #mob-menu-btn { display: flex; }
+  .toc {
+    position: fixed; top: 0; left: 0; z-index: 1060;
+    height: 100vh; transform: translateX(-110%);
+    transition: transform .28s cubic-bezier(.4,0,.2,1), box-shadow .28s;
+    box-shadow: none;
+  }
+  .toc.mob-open {
+    transform: translateX(0);
+    box-shadow: 6px 0 32px rgba(0,0,0,.32);
+  }
   :root { --ch-padding-x: 24px; --ch-padding-y: 40px; }
   .cover h1 { font-size: 30px; }
   #reader-controls { display: none; }
@@ -1491,6 +1572,12 @@ mark { background: var(--highlight); border-radius: 2px; color: inherit; }
 <!-- ══════════════════════════════════════════════
      MAIN LAYOUT
 ══════════════════════════════════════════════ -->
+<!-- ── Mobile nav controls ── -->
+<button id="mob-menu-btn" aria-label="Open navigation" aria-expanded="false"
+        onclick="toggleMobNav()">&#9776;</button>
+<div id="mob-backdrop" onclick="closeMobNav()"></div>
+<button id="sidebar-reopen-btn" title="Open sidebar" onclick="openSidebar()">&#8250;&#8250;</button>
+
 <div class="wrapper">
 
 <!-- ── Sidebar TOC ── -->
@@ -1501,6 +1588,8 @@ mark { background: var(--highlight); border-radius: 2px; color: inherit; }
     <div class="sub">Pharma &amp; MedTech Consultant</div>
     <div class="toc-copyright">&copy; 2026 Deepak Kumar</div>
   </div>
+
+  <button id="sidebar-toggle-btn" title="Collapse sidebar" onclick="toggleSidebar()">&#8801;</button>
 
   <input class="toc-search" id="tocSearch" type="search"
          placeholder="🔍  Search…" aria-label="Search content"
@@ -11085,7 +11174,7 @@ mark { background: var(--highlight); border-radius: 2px; color: inherit; }
     <dt id="g-gxp">GxP — Good Practice Guidelines</dt>
     <dd>Umbrella for FDA/ICH quality frameworks: <strong>GMP</strong> (manufacturing, 21 CFR 210/211), <strong>GCP</strong> (clinical trials, ICH E6), <strong>GLP</strong> (laboratory studies, 21 CFR 58), <strong>GDP</strong> (distribution/cold chain), <strong>GVP</strong> (pharmacovigilance), <strong>GAMP 5</strong> (computerized systems — Veeva = Category 4). All ensure quality, data integrity, and patient safety throughout the drug lifecycle.</dd>
     <dt id="g-heor">HEOR — Health Economics &amp; Outcomes Research</dt>
-    <dd>Research generating evidence of a medicine's economic and real-world value. Key outputs: Cost-effectiveness analysis (cost per QALY), Budget Impact Model, AMCP Dossier, PROs (patient-reported outcomes). <strong>RWE/RWD</strong>: Real-World Evidence from claims data, EHR, registries — increasingly used post-approval for payer negotiations and label expansions.</dd>
+    <dd>Research generating evidence of a medicine’s economic and real-world value. Key outputs: Cost-effectiveness analysis (cost per QALY), Budget Impact Model, AMCP Dossier, PROs (patient-reported outcomes). <strong>RWE/RWD</strong>: Real-World Evidence from claims data, EHR, registries — increasingly used post-approval for payer negotiations and label expansions.</dd>
     <dt id="g-hcp">HCP / HCO</dt>
     <dd><strong>HCP (Healthcare Professional)</strong>: Any licensed prescriber or recommender — physicians, NPs, PAs, pharmacists. Primary targets of commercial and medical engagement. <strong>HCO (Healthcare Organization)</strong>: Hospitals, clinics, group practices, IDNs. Managed through Key Account Management (KAM) teams.</dd>
     <dt id="g-ind">IND / NDA / BLA / ANDA</dt>
@@ -11115,7 +11204,7 @@ mark { background: var(--highlight); border-radius: 2px; color: inherit; }
     <dd>The average price manufacturers receive from wholesalers and retail pharmacies for drugs distributed in the US, net of chargebacks, cash discounts, and certain fees. Reported quarterly to CMS. AMP is the basis for: Medicaid base rebate calculation, 340B ceiling price (AMP × 23.1% discount), and the Federal Supply Schedule Non-FAMP calculation. <em>→ See: Model N, Government Pricing (Ch 5)</em></dd>
 
     <dt id="g-anaplan">Anaplan</dt>
-    <dd>Cloud-based connected planning platform used by pharmaceutical market access, finance, and commercial teams. Anaplan's in-memory calculation engine enables real-time scenario modelling across gross-to-net planning, formulary contracting strategy, brand revenue forecasting, LOE planning, and quota setting. <em>→ See: Market Access (Ch 5), Model N</em></dd>
+    <dd>Cloud-based connected planning platform used by pharmaceutical market access, finance, and commercial teams. Anaplan’s in-memory calculation engine enables real-time scenario modelling across gross-to-net planning, formulary contracting strategy, brand revenue forecasting, LOE planning, and quota setting. <em>→ See: Market Access (Ch 5), Model N</em></dd>
 
     <dt id="g-best-price">Best Price</dt>
     <dd>The lowest price a manufacturer charges any US customer in any pricing arrangement. Manufacturers report Best Price quarterly to CMS as part of the MDRP. The Medicaid base rebate equals the greater of 23.1% of AMP or the AMP–Best Price difference. <em>→ See: Model N, AMP, MDRP (Ch 5)</em></dd>
@@ -11127,13 +11216,13 @@ mark { background: var(--highlight); border-radius: 2px; color: inherit; }
     <dd>The globally harmonised five-module format for regulatory submissions (NDA, BLA, MAA) developed under ICH M4. The eCTD is the required electronic submission format for FDA, using a structured XML backbone enabling lifecycle management of submission sequences. A typical NDA runs 100,000–300,000 pages equivalent. <em>→ See: NDA, Veeva RIM, R&amp;D Regulatory (Ch 2)</em></dd>
 
     <dt id="g-etmf">eTMF — Electronic Trial Master File</dt>
-    <dd>The electronic system managing the Trial Master File — the collection of essential documents that permits evaluation of a clinical trial's conduct and data quality, as defined by ICH E6(R2). Veeva Vault eTMF uses the DIA TMF Reference Model to define expected documents, track completeness in real time, and generate inspection-ready dossiers. <em>→ See: TMF, Veeva RIM, R&amp;D Regulatory (Ch 2)</em></dd>
+    <dd>The electronic system managing the Trial Master File — the collection of essential documents that permits evaluation of a clinical trial’s conduct and data quality, as defined by ICH E6(R2). Veeva Vault eTMF uses the DIA TMF Reference Model to define expected documents, track completeness in real time, and generate inspection-ready dossiers. <em>→ See: TMF, Veeva RIM, R&amp;D Regulatory (Ch 2)</em></dd>
 
     <dt id="g-formulary-tier">Formulary / Formulary Tier</dt>
     <dd>The list of drugs covered by a health plan and their cost-sharing tier: <strong>Tier 1</strong> (generic, lowest co-pay), <strong>Tier 2</strong> (preferred brand), <strong>Tier 3</strong> (non-preferred brand), <strong>Tier 4</strong> (specialty, highest co-insurance). Preferred tier placement (Tier 2 vs. Tier 3) can drive 3–5× prescription volume differences. <em>→ See: PBM, Market Access (Ch 5)</em></dd>
 
     <dt id="g-gtm">Gross-to-Net (GTN) Waterfall</dt>
-    <dd>The reconciliation between a drug's WAC (list price) and the net revenue actually realised per unit after all contractual deductions. Major waterfall components: managed care rebates (30–60%+ of WAC for competitive categories), Medicaid statutory rebates, 340B discounts, chargebacks, patient co-pay assistance, distribution fees. GTN ratios have increased from ~15% in 2005 to 40–60%+ for many branded drugs by 2025. <em>→ See: WAC, Rebate, Model N (Ch 5)</em></dd>
+    <dd>The reconciliation between a drug’s WAC (list price) and the net revenue actually realised per unit after all contractual deductions. Major waterfall components: managed care rebates (30–60%+ of WAC for competitive categories), Medicaid statutory rebates, 340B discounts, chargebacks, patient co-pay assistance, distribution fees. GTN ratios have increased from ~15% in 2005 to 40–60%+ for many branded drugs by 2025. <em>→ See: WAC, Rebate, Model N (Ch 5)</em></dd>
 
     <dt id="g-icer">ICER — Incremental Cost-Effectiveness Ratio</dt>
     <dd>The additional cost per Quality-Adjusted Life Year (QALY) gained by a new therapy versus the current standard of care. Published by ICER (Institute for Clinical and Economic Review), whose independent assessments directly influence PBM formulary negotiations. Commonly cited US willingness-to-pay threshold: $100,000–$150,000 per QALY. <em>→ See: QALY, BIM, HEOR (Ch 5)</em></dd>
@@ -11142,7 +11231,7 @@ mark { background: var(--highlight); border-radius: 2px; color: inherit; }
     <dd>Landmark US legislation with three major pharmaceutical pricing provisions: (1) Medicare Drug Price Negotiation — CMS can directly negotiate prices for high-expenditure small-molecule drugs (after 9 years) and biologics (after 13 years); first negotiated prices effective 2026. (2) Inflation Rebate Penalty — manufacturers must pay rebates to CMS if drug prices increase faster than CPI-U. (3) Part D Redesign — $2,000 OOP maximum for Medicare beneficiaries in 2025. <em>→ See: Medicare, WAC, Market Access (Ch 5)</em></dd>
 
     <dt id="g-loe">LOE — Loss of Exclusivity</dt>
-    <dd>The point at which a branded drug's patent protection and/or regulatory exclusivity expires, enabling generic or biosimilar market entry. Brands typically lose 80–90% of volume within 12 months of first generic entry as PBMs switch formulary coverage. LOE planning encompasses: authorised generic strategy, patient assistance wind-down, contracting transition, and lifecycle management. <em>→ See: Anaplan, Market Access (Ch 5)</em></dd>
+    <dd>The point at which a branded drug’s patent protection and/or regulatory exclusivity expires, enabling generic or biosimilar market entry. Brands typically lose 80–90% of volume within 12 months of first generic entry as PBMs switch formulary coverage. LOE planning encompasses: authorised generic strategy, patient assistance wind-down, contracting transition, and lifecycle management. <em>→ See: Anaplan, Market Access (Ch 5)</em></dd>
 
     <dt id="g-mdrp">MDRP — Medicaid Drug Rebate Programme</dt>
     <dd>The federal programme requiring pharmaceutical manufacturers to pay rebates to state Medicaid programmes in exchange for Medicaid coverage of their drugs. The federal base rebate is the greater of 23.1% of AMP or the AMP–Best Price difference. Quarterly CMS reporting of AMP and Best Price is the operational backbone of MDRP compliance, managed through Model N. <em>→ See: AMP, Best Price, Model N (Ch 5)</em></dd>
@@ -11151,19 +11240,19 @@ mark { background: var(--highlight); border-radius: 2px; color: inherit; }
     <dd>Enterprise revenue management platform purpose-built for pharmaceutical government pricing compliance, contract management, and rebate administration. Core modules: Government Pricing (automated AMP, Best Price, Non-FAMP, ASP calculation and CMS submission), Contract Management (chargeback processing), Rebate Management, 340B Programme Management, and Gross-to-Net Analytics. Model N creates an audit-ready, 21 CFR Part 11-compliant record of all government pricing calculations. <em>→ See: AMP, Best Price, Chargeback, 340B (Ch 5)</em></dd>
 
     <dt id="g-qaly">QALY — Quality-Adjusted Life Year</dt>
-    <dd>A measure of disease burden combining quantity and quality of life. One QALY = one year of perfect health. QALYs are the standard unit in cost-effectiveness analysis — the ICER (cost per QALY gained) is the primary metric payers and HTA bodies use to evaluate whether a drug's price is justified by its clinical benefit. Widely used by UK's NICE, EU HTA bodies, and increasingly by US private payers. <em>→ See: ICER, BIM, HEOR (Ch 5)</em></dd>
+    <dd>A measure of disease burden combining quantity and quality of life. One QALY = one year of perfect health. QALYs are the standard unit in cost-effectiveness analysis — the ICER (cost per QALY gained) is the primary metric payers and HTA bodies use to evaluate whether a drug’s price is justified by its clinical benefit. Widely used by UK’s NICE, EU HTA bodies, and increasingly by US private payers. <em>→ See: ICER, BIM, HEOR (Ch 5)</em></dd>
 
     <dt id="g-rebate">Rebate</dt>
     <dd>A retrospective discount paid by a manufacturer to a PBM, health plan, or government programme based on formulary placement, utilisation performance, or statutory obligation. Commercial managed care rebates secure preferred formulary tier access and are the primary driver of gross-to-net deductions. Medicaid rebates are statutory under the MDRP. <em>→ See: Gross-to-Net, MDRP, Model N (Ch 5)</em></dd>
 
     <dt id="g-veeva-rim">RIM — Veeva Vault RIM</dt>
-    <dd>Veeva's regulatory information management platform managing the complete regulatory record: NDA/BLA/MAA submissions (eCTD authoring, publishing, ESG delivery), global registration database, health authority correspondence, labelling lifecycle, and regulatory commitment tracking. RIM integrates with Vault eTMF and Vault PromoMats. <em>→ See: eTMF, CTD, R&amp;D Regulatory (Ch 2)</em></dd>
+    <dd>Veeva’s regulatory information management platform managing the complete regulatory record: NDA/BLA/MAA submissions (eCTD authoring, publishing, ESG delivery), global registration database, health authority correspondence, labelling lifecycle, and regulatory commitment tracking. RIM integrates with Vault eTMF and Vault PromoMats. <em>→ See: eTMF, CTD, R&amp;D Regulatory (Ch 2)</em></dd>
 
     <dt id="g-susar">SUSAR — Suspected Unexpected Serious Adverse Reaction</dt>
-    <dd>A serious adverse reaction that is both unexpected (not described in the current Investigator's Brochure) and reasonably suspected to be causally related to an investigational drug. Fatal or life-threatening SUSARs must be reported to FDA within 7 calendar days; all other SUSARs within 15 calendar days. <em>→ See: DSUR, IND, R&amp;D Regulatory (Ch 2)</em></dd>
+    <dd>A serious adverse reaction that is both unexpected (not described in the current Investigator’s Brochure) and reasonably suspected to be causally related to an investigational drug. Fatal or life-threatening SUSARs must be reported to FDA within 7 calendar days; all other SUSARs within 15 calendar days. <em>→ See: DSUR, IND, R&amp;D Regulatory (Ch 2)</em></dd>
 
     <dt id="g-wac">WAC — Wholesale Acquisition Cost</dt>
-    <dd>The manufacturer's published list price to wholesalers — the anchor price for all downstream pharmaceutical pricing calculations. No major payer pays WAC; every channel receives discounts or rebates below list. Post-IRA 2022, WAC increases for Medicare drugs exceeding CPI-U trigger mandatory inflation rebates to CMS. <em>→ See: Gross-to-Net, Rebate, AMP, Market Access (Ch 5)</em></dd>
+    <dd>The manufacturer’s published list price to wholesalers — the anchor price for all downstream pharmaceutical pricing calculations. No major payer pays WAC; every channel receives discounts or rebates below list. Post-IRA 2022, WAC increases for Medicare drugs exceeding CPI-U trigger mandatory inflation rebates to CMS. <em>→ See: Gross-to-Net, Rebate, AMP, Market Access (Ch 5)</em></dd>
 
     <dt id="g-340b">340B Drug Pricing Programme</dt>
     <dd>Federal programme requiring manufacturers to sell drugs to covered entities (safety-net hospitals, Federally Qualified Health Centres, Ryan White HIV/AIDS clinics) at ceiling prices of approximately 23.1% of AMP. 340B has grown from ~$1B in 2010 to ~$54B in 2023 in drug purchases, making it one of the most consequential and contested programmes in pharmaceutical policy. <em>→ See: AMP, Best Price, Model N (Ch 5)</em></dd>
@@ -11441,6 +11530,116 @@ function toggleControls() {
     }
   } catch(e) {}
 })();
+// ── Full sidebar collapse (desktop) ──────────────────────────────────────
+function toggleSidebar() {
+  const collapsed = document.body.classList.toggle('sidebar-collapsed');
+  try { localStorage.setItem('sidebar-collapsed', collapsed); } catch(e) {}
+}
+function openSidebar() {
+  document.body.classList.remove('sidebar-collapsed');
+  try { localStorage.setItem('sidebar-collapsed', false); } catch(e) {}
+}
+// Restore sidebar state on load
+(function() {
+  try {
+    if (localStorage.getItem('sidebar-collapsed') === 'true') {
+      document.body.classList.add('sidebar-collapsed');
+    }
+  } catch(e) {}
+})();
+
+// ── Mobile sidebar toggle
+function toggleMobNav() {
+  const toc = document.getElementById('toc');
+  const btn = document.getElementById('mob-menu-btn');
+  const bd  = document.getElementById('mob-backdrop');
+  const isOpen = toc.classList.toggle('mob-open');
+  btn.setAttribute('aria-expanded', isOpen);
+  btn.textContent = isOpen ? '✕' : '☰';
+  bd.style.display = isOpen ? 'block' : 'none';
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
+function closeMobNav() {
+  const toc = document.getElementById('toc');
+  const btn = document.getElementById('mob-menu-btn');
+  const bd  = document.getElementById('mob-backdrop');
+  toc.classList.remove('mob-open');
+  btn.setAttribute('aria-expanded','false');
+  btn.textContent = '☰';
+  bd.style.display = 'none';
+  document.body.style.overflow = '';
+}
+// Close mob nav when a link inside it is clicked
+document.addEventListener('DOMContentLoaded', function() {
+  const toc = document.getElementById('toc');
+  if (toc) {
+    toc.addEventListener('click', function(e) {
+      if (e.target.tagName === 'A' && window.innerWidth <= 820) {
+        closeMobNav();
+      }
+    });
+  }
+});
+
+// ── Sidebar collapse / expand
+function initSidebarGroups() {
+  const nav = document.getElementById('toc');
+  if (!nav) return;
+  const chLinks = Array.from(nav.querySelectorAll('a.ch'));
+  chLinks.forEach(function(chLink) {
+    // Collect consecutive .sub sibling elements
+    const subs = [];
+    let node = chLink.nextElementSibling;
+    while (node && node.tagName === 'A' && node.classList.contains('sub')) {
+      subs.push(node);
+      node = node.nextElementSibling;
+    }
+    if (subs.length === 0) return;
+
+    // Wrap chapter link + toggle btn in .ch-row
+    const row = document.createElement('div');
+    row.className = 'ch-row';
+    nav.insertBefore(row, chLink);
+    row.appendChild(chLink);
+
+    const btn = document.createElement('button');
+    btn.className = 'toc-toggle';
+    btn.setAttribute('aria-label', 'Toggle section');
+    btn.textContent = '›'; // ›
+    row.appendChild(btn);
+
+    // Wrap sub-links in .toc-group > inner div (required for CSS Grid trick)
+    const grp = document.createElement('div');
+    grp.className = 'toc-group';
+    const inner = document.createElement('div');
+    grp.appendChild(inner);
+    const firstSub = subs[0];
+    nav.insertBefore(grp, firstSub);
+    subs.forEach(function(s) { inner.appendChild(s); });
+
+    // Restore collapse state (default: open)
+    const key = 'toc-open-' + (chLink.getAttribute('href') || '').replace('#','');
+    let isOpen = false;
+    try {
+      const saved = localStorage.getItem(key);
+      if (saved !== null) isOpen = (saved === 'true');
+    } catch(e) {}
+
+    if (isOpen) {
+      grp.classList.add('open');
+      btn.classList.add('open');
+    }
+
+    btn.addEventListener('click', function(e) {
+      e.preventDefault(); e.stopPropagation();
+      const nowOpen = grp.classList.toggle('open');
+      btn.classList.toggle('open', nowOpen);
+      try { localStorage.setItem(key, nowOpen); } catch(e) {}
+    });
+  });
+}
+document.addEventListener('DOMContentLoaded', initSidebarGroups);
+
 
 
 // ── Diagram Zoom Modal ────────────────────────────────────────────────────

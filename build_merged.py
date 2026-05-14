@@ -6907,14 +6907,42 @@ img, svg {{ max-width: 100%; }}
   position: sticky; top: 0; height: 100vh;
   overflow-y: auto; overflow-x: hidden;
   padding: 28px 18px 32px 22px;
-  transition: background .3s var(--ease);
+  transition: background .3s var(--ease), transform .28s cubic-bezier(.4,0,.2,1), margin-right .28s cubic-bezier(.4,0,.2,1);
   scrollbar-width: thin;
   scrollbar-color: var(--border) transparent;
 }}
 .toc::-webkit-scrollbar {{ width: 4px; }}
 .toc::-webkit-scrollbar-track {{ background: transparent; }}
 .toc::-webkit-scrollbar-thumb {{ background: var(--border); border-radius: 2px; }}
-
+/* ── Sidebar collapse / full toggle */
+#sidebar-toggle-btn {{
+  position: absolute; top: 10px; right: 8px;
+  background: none; border: none; cursor: pointer;
+  color: var(--ink-muted); font-size: 17px;
+  padding: 4px 6px; border-radius: 5px; opacity: .55;
+  transition: opacity .2s, background .2s;
+  line-height: 1; z-index: 10;
+}}
+#sidebar-toggle-btn:hover {{ opacity: 1; background: var(--bg-alt); }}
+#sidebar-reopen-btn {{
+  display: none;
+  position: fixed; top: 16px; left: 0; z-index: 900;
+  background: var(--bg-toc); border: 1px solid var(--border);
+  border-left: none; border-radius: 0 7px 7px 0;
+  width: 28px; height: 42px;
+  cursor: pointer; color: var(--accent); font-size: 15px;
+  align-items: center; justify-content: center;
+  box-shadow: 3px 0 10px rgba(0,0,0,.13);
+  transition: background .2s, box-shadow .2s;
+}}
+#sidebar-reopen-btn:hover {{ box-shadow: 3px 0 14px rgba(0,0,0,.22); color: var(--navy); }}
+/* Collapsed sidebar state — transform avoids layout reflow */
+body.sidebar-collapsed .toc {{
+  transform: translateX(-100%);
+  margin-right: calc(-1 * var(--toc-width));
+  pointer-events: none;
+}}
+body.sidebar-collapsed #sidebar-reopen-btn {{ display: flex; }}
 
 /* ════════════════════════════════════════════════════════════════════════════
    DICTIONARY BAR + MODAL
@@ -7710,8 +7738,61 @@ mark {{ background: var(--highlight); border-radius: 2px; color: inherit; }}
 @media (max-width: 1100px) {{
   :root {{ --ch-padding-x: 48px; --ch-padding-y: 60px; }}
 }}
+/* ── Mobile nav button */
+#mob-menu-btn {{
+  display: none;
+  position: fixed; top: 14px; left: 14px; z-index: 1100;
+  background: var(--accent); color: #fff;
+  border: none; border-radius: 8px;
+  width: 40px; height: 40px; font-size: 20px;
+  cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,.28);
+  align-items: center; justify-content: center;
+  line-height: 1; transition: background .2s;
+}}
+#mob-menu-btn:hover {{ filter: brightness(1.1); }}
+#mob-backdrop {{
+  display: none; position: fixed; inset: 0; z-index: 1050;
+  background: rgba(0,0,0,.45);
+}}
+/* ── Sidebar collapse / expand */
+.ch-row {{
+  display: flex; align-items: center; gap: 2px;
+}}
+.ch-row > a {{
+  flex: 1; min-width: 0;
+}}
+.toc-toggle {{
+  flex-shrink: 0; background: none; border: none;
+  cursor: pointer; color: var(--ink-muted);
+  font-size: 13px; padding: 2px 5px; border-radius: 4px;
+  line-height: 1; opacity: .55;
+  transition: transform .22s ease, opacity .2s;
+  transform: rotate(0deg);
+}}
+.toc-toggle:hover {{ opacity: 1; background: var(--bg-alt); }}
+.toc-toggle.open {{ transform: rotate(90deg); opacity: .85; }}
+.toc-group {{
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .22s ease;
+}}
+.toc-group > div {{
+  min-height: 0;
+  overflow: hidden;
+}}
+.toc-group.open {{ grid-template-rows: 1fr; }}
 @media (max-width: 820px) {{
-  .toc {{ display: none; }}
+  #mob-menu-btn {{ display: flex; }}
+  .toc {{
+    position: fixed; top: 0; left: 0; z-index: 1060;
+    height: 100vh; transform: translateX(-110%);
+    transition: transform .28s cubic-bezier(.4,0,.2,1), box-shadow .28s;
+    box-shadow: none;
+  }}
+  .toc.mob-open {{
+    transform: translateX(0);
+    box-shadow: 6px 0 32px rgba(0,0,0,.32);
+  }}
   :root {{ --ch-padding-x: 24px; --ch-padding-y: 40px; }}
   .cover h1 {{ font-size: 30px; }}
   #reader-controls {{ display: none; }}
@@ -7899,6 +7980,12 @@ mark {{ background: var(--highlight); border-radius: 2px; color: inherit; }}
 <!-- ══════════════════════════════════════════════
      MAIN LAYOUT
 ══════════════════════════════════════════════ -->
+<!-- ── Mobile nav controls ── -->
+<button id="mob-menu-btn" aria-label="Open navigation" aria-expanded="false"
+        onclick="toggleMobNav()">&#9776;</button>
+<div id="mob-backdrop" onclick="closeMobNav()"></div>
+<button id="sidebar-reopen-btn" title="Open sidebar" onclick="openSidebar()">&#8250;&#8250;</button>
+
 <div class="wrapper">
 
 <!-- ── Sidebar TOC ── -->
@@ -7909,6 +7996,8 @@ mark {{ background: var(--highlight); border-radius: 2px; color: inherit; }}
     <div class="sub">Pharma &amp; MedTech Consultant</div>
     <div class="toc-copyright">&copy; 2026 Deepak Kumar</div>
   </div>
+
+  <button id="sidebar-toggle-btn" title="Collapse sidebar" onclick="toggleSidebar()">&#8801;</button>
 
   <input class="toc-search" id="tocSearch" type="search"
          placeholder="🔍  Search…" aria-label="Search content"
@@ -9206,6 +9295,116 @@ function toggleControls() {{
     }}
   }} catch(e) {{}}
 }})();
+// ── Full sidebar collapse (desktop) ──────────────────────────────────────
+function toggleSidebar() {{
+  const collapsed = document.body.classList.toggle('sidebar-collapsed');
+  try {{ localStorage.setItem('sidebar-collapsed', collapsed); }} catch(e) {{}}
+}}
+function openSidebar() {{
+  document.body.classList.remove('sidebar-collapsed');
+  try {{ localStorage.setItem('sidebar-collapsed', false); }} catch(e) {{}}
+}}
+// Restore sidebar state on load
+(function() {{
+  try {{
+    if (localStorage.getItem('sidebar-collapsed') === 'true') {{
+      document.body.classList.add('sidebar-collapsed');
+    }}
+  }} catch(e) {{}}
+}})();
+
+// ── Mobile sidebar toggle
+function toggleMobNav() {{
+  const toc = document.getElementById('toc');
+  const btn = document.getElementById('mob-menu-btn');
+  const bd  = document.getElementById('mob-backdrop');
+  const isOpen = toc.classList.toggle('mob-open');
+  btn.setAttribute('aria-expanded', isOpen);
+  btn.textContent = isOpen ? '\u2715' : '\u2630';
+  bd.style.display = isOpen ? 'block' : 'none';
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}}
+function closeMobNav() {{
+  const toc = document.getElementById('toc');
+  const btn = document.getElementById('mob-menu-btn');
+  const bd  = document.getElementById('mob-backdrop');
+  toc.classList.remove('mob-open');
+  btn.setAttribute('aria-expanded','false');
+  btn.textContent = '\u2630';
+  bd.style.display = 'none';
+  document.body.style.overflow = '';
+}}
+// Close mob nav when a link inside it is clicked
+document.addEventListener('DOMContentLoaded', function() {{
+  const toc = document.getElementById('toc');
+  if (toc) {{
+    toc.addEventListener('click', function(e) {{
+      if (e.target.tagName === 'A' && window.innerWidth <= 820) {{
+        closeMobNav();
+      }}
+    }});
+  }}
+}});
+
+// ── Sidebar collapse / expand
+function initSidebarGroups() {{
+  const nav = document.getElementById('toc');
+  if (!nav) return;
+  const chLinks = Array.from(nav.querySelectorAll('a.ch'));
+  chLinks.forEach(function(chLink) {{
+    // Collect consecutive .sub sibling elements
+    const subs = [];
+    let node = chLink.nextElementSibling;
+    while (node && node.tagName === 'A' && node.classList.contains('sub')) {{
+      subs.push(node);
+      node = node.nextElementSibling;
+    }}
+    if (subs.length === 0) return;
+
+    // Wrap chapter link + toggle btn in .ch-row
+    const row = document.createElement('div');
+    row.className = 'ch-row';
+    nav.insertBefore(row, chLink);
+    row.appendChild(chLink);
+
+    const btn = document.createElement('button');
+    btn.className = 'toc-toggle';
+    btn.setAttribute('aria-label', 'Toggle section');
+    btn.textContent = '\u203a'; // ›
+    row.appendChild(btn);
+
+    // Wrap sub-links in .toc-group > inner div (required for CSS Grid trick)
+    const grp = document.createElement('div');
+    grp.className = 'toc-group';
+    const inner = document.createElement('div');
+    grp.appendChild(inner);
+    const firstSub = subs[0];
+    nav.insertBefore(grp, firstSub);
+    subs.forEach(function(s) {{ inner.appendChild(s); }});
+
+    // Restore collapse state (default: open)
+    const key = 'toc-open-' + (chLink.getAttribute('href') || '').replace('#','');
+    let isOpen = false;
+    try {{
+      const saved = localStorage.getItem(key);
+      if (saved !== null) isOpen = (saved === 'true');
+    }} catch(e) {{}}
+
+    if (isOpen) {{
+      grp.classList.add('open');
+      btn.classList.add('open');
+    }}
+
+    btn.addEventListener('click', function(e) {{
+      e.preventDefault(); e.stopPropagation();
+      const nowOpen = grp.classList.toggle('open');
+      btn.classList.toggle('open', nowOpen);
+      try {{ localStorage.setItem(key, nowOpen); }} catch(e) {{}}
+    }});
+  }});
+}}
+document.addEventListener('DOMContentLoaded', initSidebarGroups);
+
 {MODAL_JS}
 </script>
 </body>
