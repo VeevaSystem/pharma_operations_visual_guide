@@ -1476,7 +1476,7 @@ mark { background: var(--highlight); border-radius: 2px; color: inherit; }
     <span class="cover-pill">Strategy</span>
   </div>
   <div class="cover-meta">
-    13 Chapters · Visual SVG Process Maps · Interactive Glossary · Hover Tooltips<br>
+    14 Chapters · Visual SVG Process Maps · Interactive Glossary · Hover Tooltips<br>
     R&amp;D Regulatory · eTMF · Veeva Vault RIM · Clinical Operations · Market Access<br>
     Commercial Affairs · Medical Affairs · Model N · Anaplan · Veeva Platform Reference<br>
     FDA &amp; ICH Regulatory Frameworks · GxP · 21 CFR · MDRP · 340B · IRA 2022<br>
@@ -1614,8 +1614,27 @@ mark { background: var(--highlight); border-radius: 2px; color: inherit; }
   <a href="#vum-permmodel"     class="sub" style="padding-left:28px;">↳ Permission Architecture</a>
   <a href="#vum-vault-users"   class="sub" style="padding-left:28px;">↳ Vault Users</a>
 
-  <div class="toc-section">Part VIII &#8212; Strategy</div>
-  <a href="#ch13"                  class="ch">Ch 13 · Strategy</a>
+  <div class="toc-section">Part VIII &#8212; Vault CRM</div>
+  <a href="#ch-vault-crm"              class="ch">Ch 13 · Vault CRM</a>
+  <a href="#vcrm-why-migrate"          class="sub">Why Migrate?</a>
+  <a href="#vcrm-architecture"         class="sub">Platform Architecture</a>
+  <a href="#vcrm-modules"              class="sub">Modules &amp; Objects</a>
+  <a href="#vcrm-architecture-detail"  class="sub">Object Architecture</a>
+  <a href="#vcrm-commercial"           class="sub">Commercial Workflow</a>
+  <a href="#vcrm-msl"                  class="sub">MSL Workflow</a>
+  <a href="#vcrm-sample"               class="sub">Sample Management</a>
+  <a href="#vcrm-territory"            class="sub">Territory (Vault Align)</a>
+  <a href="#vcrm-analytics"            class="sub">Analytics &amp; SFE</a>
+  <a href="#vcrm-admin"                class="sub">Admin Setup</a>
+  <a href="#vcrm-user-mgmt"            class="sub">User Management</a>
+  <a href="#vcrm-permissions"          class="sub">Permission Sets</a>
+  <a href="#vcrm-promomats"            class="sub">PromoMats Integration</a>
+  <a href="#vcrm-medcomm"              class="sub">MedComm Integration</a>
+  <a href="#vcrm-network"              class="sub">Network Integration</a>
+  <a href="#vcrm-migration"            class="sub">Migration Roadmap</a>
+
+  <div class="toc-section">Part IX &#8212; Strategy</div>
+  <a href="#ch14"                  class="ch">Ch 14 · Strategy</a>
   <a href="#ch13-framework"        class="sub">Strategy Framework</a>
   <a href="#ch13-positioning"      class="sub">Brand Positioning</a>
   <a href="#ch13-portfolio"        class="sub">Portfolio Strategy</a>
@@ -1645,17 +1664,17 @@ mark { background: var(--highlight); border-radius: 2px; color: inherit; }
     <div class="fm-rule"></div>
     <div class="fm-body">
       <p>This guide provides a comprehensive, story-driven reference covering the full spectrum of pharmaceutical operations — from the earliest stages of laboratory discovery and R&amp;D regulatory strategy through clinical development, commercialisation, medical affairs, market access, and post-launch lifecycle management. Written for practitioners, consultants, and cross-functional professionals operating at the intersection of science, strategy, and systems, it integrates operational process, regulatory framework, technology platform, and pricing strategy into a single cohesive reference.</p>
-      <p>The guide spans thirteen chapters and one reference section, encompassing: the R&amp;D-to-market pipeline; R&amp;D regulatory affairs including eTMF, RIM, and submission management (Veeva Vault RIM); commercial field operations and sales force effectiveness; medical affairs strategy, evidence generation, and MSL operations; the commercial–medical firewall; market access strategy covering pricing, reimbursement, payer relations, Gross-to-Net management, 340B compliance, and HEOR (Model N, Anaplan); product launch management; organisational roles and team structures; US and international regulatory compliance (21 CFR, GxP, ICH, AKS, Sunshine Act, PDMA, PhRMA Code, MDRP, IRA 2022, False Claims Act); the Veeva technology ecosystem (CRM, Vault PromoMats, Vault Medical, Vault RIM, eTMF, Network, Events Management, User Management); and pharmaceutical strategy encompassing brand positioning, portfolio management, lifecycle planning, global launch sequencing, competitive intelligence, stakeholder strategy, omnichannel execution, and integrated brand planning.</p>
+      <p>The guide spans fourteen chapters and one reference section, encompassing: the R&amp;D-to-market pipeline; R&amp;D regulatory affairs including eTMF, RIM, and submission management (Veeva Vault RIM); commercial field operations and sales force effectiveness; medical affairs strategy, evidence generation, and MSL operations; the commercial–medical firewall; market access strategy covering pricing, reimbursement, payer relations, Gross-to-Net management, 340B compliance, and HEOR (Model N, Anaplan); product launch management; organisational roles and team structures; US and international regulatory compliance (21 CFR, GxP, ICH, AKS, Sunshine Act, PDMA, PhRMA Code, MDRP, IRA 2022, False Claims Act); the Veeva technology ecosystem (CRM, Vault PromoMats, Vault Medical, Vault RIM, eTMF, Network, Events Management, User Management); Vault CRM — the next-generation Veeva platform covering migration rationale, module architecture, admin setup, user management, permission sets, and integrations with PromoMats, MedComm, and Network; and pharmaceutical strategy encompassing brand positioning, portfolio management, lifecycle planning, global launch sequencing, competitive intelligence, stakeholder strategy, omnichannel execution, and integrated brand planning.</p>
       <p>Throughout, abstract process is grounded in concrete Veeva object architecture, data-flow diagrams, and operational decision trees. Interactive SVG process maps — all zoomable — visualise key workflows including the Market Access GTN waterfall, regulatory submission lifecycle, and launch readiness milestones. A 200+ term glossary provides precise definitions spanning R&amp;D regulatory, commercial, medical affairs, and market access terminology.</p>
       <div class="fm-meta-grid">
         <div class="fm-meta-item"><span class="fm-meta-label">Scope</span><span class="fm-meta-val">US FDA frameworks; global references where noted</span></div>
-        <div class="fm-meta-item"><span class="fm-meta-label">Chapters</span><span class="fm-meta-val">13 + Glossary</span></div>
+        <div class="fm-meta-item"><span class="fm-meta-label">Chapters</span><span class="fm-meta-val">14 + Glossary</span></div>
         <div class="fm-meta-item"><span class="fm-meta-label">Diagrams</span><span class="fm-meta-val">27 interactive SVG process maps</span></div>
         <div class="fm-meta-item"><span class="fm-meta-label">Regulations</span><span class="fm-meta-val">21 CFR Parts 11/50/54/56/312/314/803, GxP, ICH E6/Q10, AKS, Sunshine Act, PDMA, FCA, PhRMA Code</span></div>
         <div class="fm-meta-item"><span class="fm-meta-label">Systems</span><span class="fm-meta-val">Veeva CRM, Vault PromoMats, Vault Medical, Vault RIM, eTMF, Network, Events Mgmt, Model N, Anaplan</span></div>
         <div class="fm-meta-item"><span class="fm-meta-label">Edition</span><span class="fm-meta-val">May 2026</span></div>
       </div>
-      <p class="fm-keywords"><strong>Keywords:</strong> pharmaceutical R&amp;D · regulatory affairs · eTMF · Veeva Vault RIM · commercial affairs · medical affairs · market access · Veeva CRM · Vault PromoMats · Vault Medical · FDA regulations · GxP compliance · 21 CFR Part 11 · Anti-Kickback Statute · Sunshine Act · product launch · HCP engagement · MSL operations · Gross-to-Net · Model N · Anaplan · 340B compliance · HEOR · ICER · MDRP · IRA 2022 · drug commercialisation</p>
+      <p class="fm-keywords"><strong>Keywords:</strong> pharmaceutical R&amp;D · regulatory affairs · eTMF · Veeva Vault RIM · commercial affairs · medical affairs · market access · Veeva CRM · Vault CRM · Vault PromoMats · Vault Medical · FDA regulations · GxP compliance · 21 CFR Part 11 · Anti-Kickback Statute · Sunshine Act · product launch · HCP engagement · MSL operations · Gross-to-Net · Model N · Anaplan · 340B compliance · HEOR · ICER · MDRP · IRA 2022 · drug commercialisation · Vault CRM migration · permission sets · admin setup</p>
     </div>
   </div>
 </section>
@@ -1674,13 +1693,14 @@ mark { background: var(--highlight); border-radius: 2px; color: inherit; }
       <p>Pharmaceutical operations are, in practice, far more technically complex than their job titles suggest. A "sales representative" operates inside a validated CRM platform with multiple compliance checkpoints before a single sample can be transferred. A "medical science liaison" manages scientific exchange under a documented engagement plan, with every interaction recorded, every unsolicited request logged, and every response letter reviewed before it is sent. A "market access manager" negotiates formulary placement using a gross-to-net model that spans WAC pricing, PBM rebate tiers, government price calculations, 340B eligibility, and chargeback reconciliation — all tracked in a revenue management platform like Model N. An "R&amp;D regulatory affairs lead" manages a Trial Master File that must satisfy auditors in five regulatory zones, maintained in real time inside Veeva Vault eTMF.</p>
       <p>None of this complexity is well-documented in any single place. Regulatory frameworks live in Federal Register notices and ICH guidelines. Veeva object architecture lives in administrator guides. Market access economics live in consulting white papers. MSL best-practice lives in position statements. Process maps circulate inside individual companies in PowerPoint decks that are never published externally. Someone moving from R&amp;D into commercial, or from medical affairs into market access, has no single reference to orient themselves.</p>
       <p>This guide is my attempt to synthesise everything: the regulatory foundations, the operational processes, the technology platforms, the pricing and access economics, and the organisational structures — into a single cohesive reference that a practitioner can actually use. Every section is written to answer the question a new hire asks in their first month, a consultant faces before their first engagement, and an experienced professional confronts when they cross into a new function.</p>
-      <p>The scope has grown with each edition. The guide now covers thirteen chapters:</p>
+      <p>The scope has grown with each edition. The guide now covers fourteen chapters:</p>
       <p><strong>Part I — Foundation</strong> (Ch 1–2) traces the drug from target identification through IND, Phase I–III trials, NDA/BLA submission, FDA review, and approval — including expedited programmes (Breakthrough Therapy, Fast Track, Priority Review, Accelerated Approval) and the R&amp;D Regulatory function that governs eTMF, Veeva Vault RIM, regulatory submissions, health authority interactions, and post-approval variation management.</p>
       <p><strong>Part II — Commercial Affairs</strong> (Ch 3) covers brand planning, sales force effectiveness, MLR content approval, PDMA sample management, and HCP engagement inside Veeva CRM and Vault PromoMats.</p>
       <p><strong>Part III — Medical Affairs</strong> (Ch 4) covers medical strategy, evidence generation, MSL field operations, scientific exchange, publications, and pharmacovigilance — supported by Veeva Vault Medical.</p>
       <p><strong>Part IV — Market Access</strong> (Ch 5) covers the full payer landscape — PBMs, commercial plans, Medicaid, Medicare Part B/D, and the VA — gross-to-net waterfall economics, formulary contracting and rebate strategy, government pricing compliance (AMP, Best Price, MDRP, 340B, ASP), HEOR and value-based contracting, patient support programmes, and how Model N and Anaplan automate and govern these processes end to end.</p>
-      <p><strong>Parts V–VII</strong> (Ch 6–12) cover the commercial–medical firewall, the R&amp;D-to-launch bridge, the 36-month launch timeline, every organisational role, the full regulatory compliance framework (21 CFR, GxP, AKS, Sunshine Act, PDMA, False Claims Act, IRA 2022), integrated annual operating cycles, and the complete Veeva platform ecosystem.</p>
-      <p><strong>Part VIII — Strategy</strong> (Ch 13) synthesises the decision-making layer that sits above every function: how brand positioning is set, how portfolio and pipeline investments are prioritised, how lifecycle management extends product value beyond the initial launch window, how global launch sequencing is designed, and how all functional plans are unified in the Integrated Brand Plan — told through the story of NovaCure Therapeutics and the launch of Meridian.</p>
+      <p><strong>Parts V–VII</strong> (Ch 6–12) cover the commercial–medical firewall, the R&amp;D-to-launch bridge, the 36-month launch timeline, every organisational role, the full regulatory compliance framework (21 CFR, GxP, AKS, Sunshine Act, PDMA, False Claims Act, IRA 2022), integrated annual operating cycles, and the complete Veeva platform ecosystem — including Veeva CRM, Vault PromoMats, Vault Medical, Network MDM, and Events Management.</p>
+      <p><strong>Part VIII — Vault CRM</strong> (Ch 13) addresses the next generation of Veeva's CRM platform: why pharmaceutical companies are migrating from the legacy Salesforce-based Veeva CRM to the native Vault CRM platform, what changes in the architecture and terminology, how each module works (Accounts, CLM, Approved Email, Sampling, Events, Engage, Cycle Plans, Analytics, Medical Interactions), how to set up users and configure permissions in the new model, and how Vault CRM integrates with Vault PromoMats, MedComm, and Network — with a practical migration roadmap.</p>
+      <p><strong>Part IX — Strategy</strong> (Ch 14) synthesises the decision-making layer that sits above every function: how brand positioning is set, how portfolio and pipeline investments are prioritised, how lifecycle management extends product value beyond the initial launch window, how global launch sequencing is designed, and how all functional plans are unified in the Integrated Brand Plan — told through the story of NovaCure Therapeutics and the launch of Meridian.</p>
       <p>The Veeva and platform chapters reflect hard-won operational knowledge: object architecture, permission models, CLM mechanics, Network MDM integration, Vault RIM submission lifecycles — documented with API names, field-level detail, and the compliance logic that drives every design decision. Similarly, the Model N and Anaplan sections go beyond marketing copy to explain the actual data flows, calculation logic, and integration patterns that practitioners work with daily.</p>
       <p>This is a living document. Regulations change. Platforms release new versions. PhRMA revises its Code. The IRA rewrites the Medicare negotiation landscape. The edition date on the cover reflects the state of all frameworks as of that month.</p>
       <p>If you are entering pharma for the first time, start with Chapter 1 and read sequentially — the guide is structured as a story, not a reference manual. If you are an experienced professional looking for a specific topic, the sidebar navigation, the A–Z glossary, and the search bar will take you directly there.</p>
@@ -1811,10 +1831,19 @@ mark { background: var(--highlight); border-radius: 2px; color: inherit; }
         <span class="fm-toc-desc">Veeva CRM object architecture · Commercial &amp; MSL workflows · CLM loop · Vault PromoMats MLR · Vault Medical · Network MDM · Events Management · User Management &amp; permissions</span>
       </a>
 
-      <div class="fm-toc-part">Part VIII &#8212; Strategy</div>
+      <div class="fm-toc-part">Part VIII &#8212; Vault CRM</div>
 
-      <a href="#ch13" class="fm-toc-entry">
+      <a href="#ch-vault-crm" class="fm-toc-entry">
         <span class="fm-toc-num">13</span>
+        <span class="fm-toc-title">Vault CRM</span>
+        <span class="fm-toc-dots"></span>
+        <span class="fm-toc-desc">Why migrate from Veeva CRM to Vault CRM · Vault platform architecture · Object architecture diagram · Modules &amp; objects · Commercial workflow &amp; call objects · MSL workflow &amp; firewall · Sample management PDMA · Territory management (Vault Align) · Analytics &amp; SFE · Admin setup · User management &amp; permission sets · PromoMats, MedComm &amp; Network integrations · Migration roadmap</span>
+      </a>
+
+      <div class="fm-toc-part">Part IX &#8212; Strategy</div>
+
+      <a href="#ch14" class="fm-toc-entry">
+        <span class="fm-toc-num">14</span>
         <span class="fm-toc-title">Strategy</span>
         <span class="fm-toc-dots"></span>
         <span class="fm-toc-desc">Four-phase strategy framework · Brand positioning &amp; competitive landscape · Portfolio &amp; pipeline management · Lifecycle &amp; indication expansion · Global launch sequencing · Competitive intelligence · Stakeholder strategy · Omnichannel &amp; digital · Integrated Brand Plan</span>
@@ -9382,19 +9411,1094 @@ mark { background: var(--highlight); border-radius: 2px; color: inherit; }
     <figcaption class="vis-cap">Veeva Platform Ecosystem — Full System Map &amp; Data Flows</figcaption>
   </figure>
 
-  <div class="ch-nav-footer"><a class="ch-nav-link prev" href="#ch11"><span class="ch-nav-arrow">←</span><span class="ch-nav-text">Ch 11 · Putting It Together</span></a><div class="ch-nav-dot">◈</div><a class="ch-nav-link next" href="#ch13"><span class="ch-nav-text">Ch 13 · Strategy</span><span class="ch-nav-arrow">→</span></a></div>
+  <div class="ch-nav-footer"><a class="ch-nav-link prev" href="#ch11"><span class="ch-nav-arrow">←</span><span class="ch-nav-text">Ch 11 · Putting It Together</span></a><div class="ch-nav-dot">◈</div><a class="ch-nav-link next" href="#ch-vault-crm"><span class="ch-nav-text">Ch 13 · Vault CRM</span><span class="ch-nav-arrow">→</span></a></div>
 </div>
 
-<div class="ch-divider ch-both"></div>
-<div class="chapter" id="ch13">
+<div class="ch-divider ch-veeva"></div>
+<div class="chapter" id="ch-vault-crm">
 
-  <div class="ch-running">Chapter Thirteen · Part VIII &#8212; Strategy</div>
+  <div class="ch-running">Chapter Thirteen · Part VIII &#8212; Vault CRM</div>
   <div class="ch-decorator">
     <div class="ch-big-num">13</div>
     <div class="ch-heading-block">
       <div class="ch-label">
-        <span class="ch-pill" style="background:#0D8B8B;">Ch 13</span>
-        <span style="color:#0D8B8B;">Chapter Thirteen</span>
+        <span class="ch-pill" style="background:#E05A00;">Ch 13</span>
+        <span style="color:#E05A00;">Chapter Thirteen</span>
+      </div>
+      <h1>Vault CRM &#8212; The Next Generation Platform</h1>
+    </div>
+  </div>
+
+  <p class="lead">For over a decade, Veeva CRM on Salesforce was the operating system of pharmaceutical commercial teams worldwide. Now Veeva is building something entirely new — <strong>Vault CRM</strong> — a native Vault platform product that replaces the Salesforce foundation entirely. This chapter explains why this shift is happening, what changes for every user and administrator, and how to navigate the transition.</p>
+
+  <p>It is 2024. Marcus Alvarez, the CRM Systems Lead at NovaTerra Pharmaceuticals, is sitting in a webinar when the Veeva product team announces the Vault CRM General Availability roadmap. By 2030, Veeva will end-of-life the Salesforce-based Veeva CRM. Every pharmaceutical company running Veeva CRM — tens of thousands globally — will need to migrate. Marcus pulls out a notebook. The question is no longer <em>if</em>, but <em>when</em> and <em>how</em>.</p>
+
+  <p>This chapter walks through everything Marcus needs to know, and everything <em>you</em> need to know: the platform architecture, the modules, the admin setup, the user and permission model, the integrations with PromoMats, MedComm, and Network, and the migration roadmap from legacy CRM to Vault CRM.</p>
+
+  <!-- ═══════════════════════════════════
+       WHY MIGRATE
+  ═══════════════════════════════════ -->
+  <h2 id="vcrm-why-migrate">Why Migrate to Vault CRM?</h2>
+
+  <p>The move from Salesforce-based Veeva CRM to Vault CRM is not just a platform upgrade — it is a foundational architectural shift. Understanding the <em>why</em> makes the <em>how</em> much easier to navigate.</p>
+
+  <h3>The Limitations of the Salesforce Foundation</h3>
+  <p>Veeva CRM was built on top of Salesforce — a general-purpose CRM platform — and Veeva extended it with pharmaceutical-specific objects and logic. But this created structural constraints. Every Salesforce platform release had to be tested against Veeva's customizations. Salesforce licensing costs sat on top of Veeva's own fees. Pharma-specific compliance requirements (21 CFR Part 11, PDMA, Sunshine Act) were implemented as overlays on a general-purpose platform, not natively baked in. API limits, governor limits, and Salesforce's multi-tenant architecture constrained what Veeva could build.</p>
+
+  <p>Vault, by contrast, is Veeva's own platform — built from the ground up for life sciences. It already powers Vault PromoMats, Vault Medical, Vault RIM, Vault eTMF, and Vault Quality. Moving CRM to Vault means the entire Veeva product suite — commercial, medical, regulatory, quality — runs on a single unified platform with a single data model, single security framework, and single integration layer.</p>
+
+  <h3>What Changes for Users</h3>
+
+  <div class="crm-obj-grid" style="margin:20px 0;">
+    <div>
+      <div class="crm-section-label comm">◈ Key Terminology Changes: Veeva CRM → Vault CRM</div>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:8px;">
+        <thead>
+          <tr style="background:#0A3D62;color:#fff;">
+            <th style="padding:8px 12px;text-align:left;">Veeva CRM (Salesforce)</th>
+            <th style="padding:8px 12px;text-align:left;">Vault CRM (Native Vault)</th>
+            <th style="padding:8px 12px;text-align:left;">What It Means</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#F8FAFC;">
+            <td style="padding:7px 12px;border-bottom:1px solid #E2E8F0;">Field-Level Security (FLS)</td>
+            <td style="padding:7px 12px;border-bottom:1px solid #E2E8F0;font-weight:600;">Field Permission</td>
+            <td style="padding:7px 12px;border-bottom:1px solid #E2E8F0;">Controls which fields a user can read or edit</td>
+          </tr>
+          <tr>
+            <td style="padding:7px 12px;border-bottom:1px solid #E2E8F0;">Record Types</td>
+            <td style="padding:7px 12px;border-bottom:1px solid #E2E8F0;font-weight:600;">Object Types</td>
+            <td style="padding:7px 12px;border-bottom:1px solid #E2E8F0;">Categorizes records within an object (e.g., HCP vs HCO Account)</td>
+          </tr>
+          <tr style="background:#F8FAFC;">
+            <td style="padding:7px 12px;border-bottom:1px solid #E2E8F0;">Permission Sets</td>
+            <td style="padding:7px 12px;border-bottom:1px solid #E2E8F0;font-weight:600;">Permission Sets (same term)</td>
+            <td style="padding:7px 12px;border-bottom:1px solid #E2E8F0;">Additive permissions layered on top of base profile</td>
+          </tr>
+          <tr>
+            <td style="padding:7px 12px;border-bottom:1px solid #E2E8F0;">Profiles</td>
+            <td style="padding:7px 12px;border-bottom:1px solid #E2E8F0;font-weight:600;">Security Profiles</td>
+            <td style="padding:7px 12px;border-bottom:1px solid #E2E8F0;">Base permission set assigned to each user role</td>
+          </tr>
+          <tr style="background:#F8FAFC;">
+            <td style="padding:7px 12px;border-bottom:1px solid #E2E8F0;">Workflows</td>
+            <td style="padding:7px 12px;border-bottom:1px solid #E2E8F0;font-weight:600;">Lifecycle Actions / Entry Actions</td>
+            <td style="padding:7px 12px;border-bottom:1px solid #E2E8F0;">Automated actions triggered by record state changes</td>
+          </tr>
+          <tr>
+            <td style="padding:7px 12px;border-bottom:1px solid #E2E8F0;">Validation Rules</td>
+            <td style="padding:7px 12px;border-bottom:1px solid #E2E8F0;font-weight:600;">Field Validation Formulas</td>
+            <td style="padding:7px 12px;border-bottom:1px solid #E2E8F0;">Enforce data quality on save</td>
+          </tr>
+          <tr style="background:#F8FAFC;">
+            <td style="padding:7px 12px;border-bottom:1px solid #E2E8F0;">Apex / Triggers</td>
+            <td style="padding:7px 12px;border-bottom:1px solid #E2E8F0;font-weight:600;">Vault Java SDK / Vault Actions</td>
+            <td style="padding:7px 12px;border-bottom:1px solid #E2E8F0;">Custom business logic executed server-side</td>
+          </tr>
+          <tr>
+            <td style="padding:7px 12px;">Related Lists</td>
+            <td style="padding:7px 12px;font-weight:600;">Related Object Sections</td>
+            <td style="padding:7px 12px;">Child records displayed on a parent record page</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <h3>The Business Case in Three Points</h3>
+  <p><strong>1. One platform, one data model.</strong> When a rep submits a Call Report in Vault CRM, the content engagement data flows directly to Vault PromoMats — no integration middleware, no API call, no batch sync. The content is <em>native</em> to the same Vault instance. Medical teams using Vault Medical see the same Account and Contact records as commercial teams in Vault CRM. Network MDM feeds master data directly. The walls between systems dissolve.</p>
+  <p><strong>2. Purpose-built compliance.</strong> PDMA sample controls, 21 CFR Part 11 audit trails, Sunshine Act transfer-of-value tracking — these are not Salesforce customizations bolted on by Veeva. In Vault CRM, they are native platform capabilities, validated out of the box, maintained by Veeva across every platform update.</p>
+  <p><strong>3. Reduced total cost of ownership.</strong> One Vault subscription replaces separate Salesforce + Veeva CRM licensing. One validation package covers all products. One IT team manages one platform. One vendor manages all integrations between CRM, PromoMats, Medical, RIM, and Network.</p>
+
+  <!-- ═══════════════════════════════════
+       PLATFORM ARCHITECTURE
+  ═══════════════════════════════════ -->
+  <h2 id="vcrm-architecture">Vault CRM Platform Architecture</h2>
+
+  <p>Vault CRM is built on the Vault platform — the same platform that powers Vault PromoMats, Vault Medical, Vault RIM, and Vault Quality. Understanding the platform's core concepts is the foundation for everything else.</p>
+
+  <h3>The Vault Data Model</h3>
+  <p>In Vault, everything is either an <strong>Object</strong> (like a database table) or a <strong>Document</strong> (a file with a lifecycle). CRM lives primarily in Objects. Each Object has:</p>
+  <ul>
+    <li><strong>Fields</strong> — data attributes (text, number, date, picklist, lookup)</li>
+    <li><strong>Object Types</strong> — categorizations of records within the object (replaces Salesforce Record Types)</li>
+    <li><strong>Lifecycles</strong> — defined states a record moves through (e.g., Draft → Active → Inactive)</li>
+    <li><strong>Relationships</strong> — lookup and master-detail links between objects</li>
+  </ul>
+
+  <p>Every record in Vault has an immutable audit trail: who created it, who modified it, when, and what changed. This is the 21 CFR Part 11 compliance baked in at the platform level — not a Veeva customization layered on top.</p>
+
+  <h3>The Application Model</h3>
+  <p>Vault CRM is organized as an <strong>Application</strong> within the Vault platform. A single Vault instance can host multiple applications — Commercial CRM, Medical CRM, Events Management, and so on — sharing the same data layer, the same user directory, and the same security framework. This is fundamentally different from Salesforce, where each "app" was a package with its own permission sets and its own upgrade cadence.</p>
+
+  <!-- ═══════════════════════════════════
+       MODULES AND OBJECTS
+  ═══════════════════════════════════ -->
+  <h2 id="vcrm-modules">Vault CRM Modules &amp; Objects</h2>
+
+  <p>Vault CRM ships as a modular platform. Companies activate the modules they need. Each module brings its own objects, page layouts, and business logic. Here is what each module does and who uses it:</p>
+
+  <div class="crm-obj-grid" style="margin:20px 0;">
+    <div>
+      <div class="crm-section-label comm">◈ Core CRM Modules</div>
+
+      <div class="crm-obj-card comm" style="margin-bottom:12px;">
+        <div class="crm-obj-name comm">Accounts &amp; Contacts</div>
+        <div class="crm-obj-api">account__v, contact__v — Foundation objects</div>
+        <div class="crm-obj-desc">Every HCP, HCO, and account relationship. Synchronized with Network MDM for master data governance. Supports HCP (physician, NP, PA) and HCO (hospital, clinic, IDN) object types. Territory alignment driven by Veeva Align. The account record is the anchor for all downstream activities — calls, emails, events, and sample drops.</div>
+      </div>
+
+      <div class="crm-obj-card comm" style="margin-bottom:12px;">
+        <div class="crm-obj-name comm">Calls &amp; CLM</div>
+        <div class="crm-obj-api">call__v, clm_presentation__v — Field activity objects</div>
+        <div class="crm-obj-desc">The call report captures every rep–HCP interaction. CLM (Closed Loop Marketing) embeds approved content directly into the call — Vault PromoMats content displayed in the CLM viewer, engagement tracked at slide level. Reaction captures (positive, negative, neutral) feed back into brand analytics. CLM content is pulled directly from PromoMats — no content synchronization job required; it is the same Vault instance.</div>
+      </div>
+
+      <div class="crm-obj-card comm" style="margin-bottom:12px;">
+        <div class="crm-obj-name comm">Approved Email</div>
+        <div class="crm-obj-api">approved_email__v — HCP email engagement</div>
+        <div class="crm-obj-desc">Reps send pre-approved, MLR-reviewed emails to HCPs directly from within CRM. Email templates reside in PromoMats and are referenced, not copied — so an MLR withdrawal in PromoMats instantly removes the template from CRM use. Open rates, link clicks, and forward tracking create an HCP engagement signal used by Next Best Action.</div>
+      </div>
+
+      <div class="crm-obj-card comm" style="margin-bottom:12px;">
+        <div class="crm-obj-name comm">Sampling</div>
+        <div class="crm-obj-api">sample_transaction__v — PDMA compliance</div>
+        <div class="crm-obj-desc">Full PDMA sample management: rep inventory tracking (lot numbers, quantities), signature capture (physical or electronic), HCP eligibility verification (DEA registration, state license), reconciliation reports. Every sample transaction creates an immutable audit record. Vault's native 21 CFR Part 11 audit trail covers the signature capture — no separate electronic signature module required.</div>
+      </div>
+
+      <div class="crm-obj-card comm" style="margin-bottom:12px;">
+        <div class="crm-obj-name comm">Events Management</div>
+        <div class="crm-obj-api">event__v, event_attendee__v — Speaker programs &amp; advisory boards</div>
+        <div class="crm-obj-desc">Speaker programs, advisory boards, medical symposia. FMV (Fair Market Value) cap enforcement on honoraria, meals, and travel. Automatic HCP spend tracking rolls up to the annual Open Payments (Sunshine Act) submission. Anti-Kickback Statute guardrails built in: venue caps, meal caps, educational purpose documentation, prohibited attendee lists.</div>
+      </div>
+
+      <div class="crm-obj-card comm" style="margin-bottom:12px;">
+        <div class="crm-obj-name comm">Cycle Plans</div>
+        <div class="crm-obj-api">cycle_plan__v, cycle_plan_target__v — Territory planning</div>
+        <div class="crm-obj-desc">Defines which HCPs a rep should call on, with what frequency, in what detail priority for a given cycle (typically monthly or quarterly). Cycle plans drive the rep's daily call list. Targets are pre-loaded by regional managers; reps cannot spontaneously add targets outside the approved list. Plan vs. actual call performance is tracked at cycle close.</div>
+      </div>
+
+      <div class="crm-obj-card med" style="margin-bottom:12px;">
+        <div class="crm-obj-name med">Medical Interactions</div>
+        <div class="crm-obj-api">medical_event__v, medical_inquiry__v — Medical Affairs use</div>
+        <div class="crm-obj-desc">MSL field interactions, scientific exchange records, medical inquiry logs, and KOL engagement. Fully firewalled from commercial activity — MSL records are not visible to commercial reps, and commercial call data is not visible to MSLs. The firewall is enforced at the object-type level, not by separate system access. Medical inquiries trigger the standard response letter workflow in Vault Medical.</div>
+      </div>
+
+      <div class="crm-obj-card med" style="margin-bottom:12px;">
+        <div class="crm-obj-name med">Engage (Remote Detailing)</div>
+        <div class="crm-obj-api">engage_session__v — Virtual HCP engagement</div>
+        <div class="crm-obj-desc">Web-conference-based virtual detailing. The rep shares CLM content via browser to the HCP's device — no software install required on the HCP side. Engagement metrics captured identically to in-person CLM. Supports hybrid workflows: start as a remote call, continue as an in-person follow-up, all linked to the same Account and Call record chain.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       VAULT CRM OBJECT ARCHITECTURE
+  ═══════════════════════════════════ -->
+  <h2 id="vcrm-architecture-detail">Vault CRM Object Architecture</h2>
+
+  <p>Vault CRM organises its data into the same four functional layers as Veeva CRM, but with native Vault object naming and a unified security model. Understanding how these layers connect is essential for both administrators configuring the platform and practitioners using it daily.</p>
+
+  <figure class="vis-embed" aria-label="Vault CRM Object Architecture">
+    <div class="vis-label"><span class="vis-icon">◈</span> Vault CRM — Object Architecture &amp; Data Relationships</div>
+    <div class="vis-inner" style="padding:24px 20px;">
+      <svg viewBox="0 0 960 480" xmlns="http://www.w3.org/2000/svg" style="font-family:Inter,sans-serif;min-width:700px;display:block;">
+        <defs>
+          <marker id="vcrm-arr" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,1 L0,6 L6,3.5 z" fill="#D0EEEE"/></marker>
+          <marker id="vcrm-arrb" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,1 L0,6 L6,3.5 z" fill="#DCECf8"/></marker>
+        </defs>
+        <rect width="960" height="480" fill="#F0FAFA"/>
+
+        <!-- Layer labels (left) -->
+        <rect x="0" y="20" width="120" height="80" fill="#D0EEEE" rx="4"/>
+        <text x="60" y="55" text-anchor="middle" fill="#0A5555" font-size="10" font-weight="700">LAYER 1</text>
+        <text x="60" y="70" text-anchor="middle" fill="#0A5555" font-size="9">Foundation</text>
+        <text x="60" y="83" text-anchor="middle" fill="#0A5555" font-size="8">Master Data</text>
+
+        <rect x="0" y="140" width="120" height="80" fill="#EAF6F6" rx="4"/>
+        <text x="60" y="175" text-anchor="middle" fill="#0A3D62" font-size="10" font-weight="700">LAYER 2</text>
+        <text x="60" y="190" text-anchor="middle" fill="#0A3D62" font-size="9">Planning</text>
+        <text x="60" y="203" text-anchor="middle" fill="#0A3D62" font-size="8">Pre-call setup</text>
+
+        <rect x="0" y="260" width="120" height="80" fill="#EAF6F6" rx="4"/>
+        <text x="60" y="295" text-anchor="middle" fill="#2D3D6B" font-size="10" font-weight="700">LAYER 3</text>
+        <text x="60" y="310" text-anchor="middle" fill="#2D3D6B" font-size="9">Activity</text>
+        <text x="60" y="323" text-anchor="middle" fill="#2D3D6B" font-size="8">Field interactions</text>
+
+        <rect x="0" y="380" width="120" height="80" fill="#EAF6F6" rx="4"/>
+        <text x="60" y="415" text-anchor="middle" fill="#0A6B6B" font-size="10" font-weight="700">LAYER 4</text>
+        <text x="60" y="430" text-anchor="middle" fill="#0A6B6B" font-size="9">Analytics</text>
+        <text x="60" y="443" text-anchor="middle" fill="#0A6B6B" font-size="8">Insights &amp; reporting</text>
+
+        <!-- Layer 1: Foundation objects -->
+        <rect x="140" y="25" width="140" height="68" rx="6" fill="#E0F7F7" stroke="#0B8B8B" stroke-width="1.5"/>
+        <text x="210" y="48" text-anchor="middle" fill="#0B5050" font-size="11" font-weight="700">account__v</text>
+        <text x="210" y="63" text-anchor="middle" fill="#0B6B6B" font-size="9.5">HCP / HCO Master</text>
+        <text x="210" y="78" text-anchor="middle" fill="#4A5568" font-size="8">Network-synced · Audit trail</text>
+
+        <rect x="300" y="25" width="140" height="68" rx="6" fill="#E0F7F7" stroke="#0B8B8B" stroke-width="1.5"/>
+        <text x="370" y="48" text-anchor="middle" fill="#0B5050" font-size="11" font-weight="700">contact__v</text>
+        <text x="370" y="63" text-anchor="middle" fill="#0B6B6B" font-size="9.5">HCP Profile Detail</text>
+        <text x="370" y="78" text-anchor="middle" fill="#4A5568" font-size="8">Specialty · NPI · License</text>
+
+        <rect x="460" y="25" width="140" height="68" rx="6" fill="#E0F7F7" stroke="#0B8B8B" stroke-width="1.5"/>
+        <text x="530" y="48" text-anchor="middle" fill="#0B5050" font-size="11" font-weight="700">territory__v</text>
+        <text x="530" y="63" text-anchor="middle" fill="#0B6B6B" font-size="9.5">Territory Alignment</text>
+        <text x="530" y="78" text-anchor="middle" fill="#4A5568" font-size="8">From Vault Align · TSF</text>
+
+        <rect x="620" y="25" width="140" height="68" rx="6" fill="#E0F7F7" stroke="#0B8B8B" stroke-width="1.5"/>
+        <text x="690" y="48" text-anchor="middle" fill="#0B5050" font-size="11" font-weight="700">product__v</text>
+        <text x="690" y="63" text-anchor="middle" fill="#0B6B6B" font-size="9.5">Product Catalog</text>
+        <text x="690" y="78" text-anchor="middle" fill="#4A5568" font-size="8">Brand · Formulation · Indication</text>
+
+        <rect x="780" y="25" width="155" height="68" rx="6" fill="#E0F7F7" stroke="#0B8B8B" stroke-width="1.5"/>
+        <text x="857" y="48" text-anchor="middle" fill="#0B5050" font-size="11" font-weight="700">network_account__v</text>
+        <text x="857" y="63" text-anchor="middle" fill="#0B6B6B" font-size="9.5">Network MDM Link</text>
+        <text x="857" y="78" text-anchor="middle" fill="#4A5568" font-size="8">DEA · License · Exclusion</text>
+
+        <!-- Layer 2: Planning -->
+        <rect x="140" y="145" width="160" height="68" rx="6" fill="#EBF0F8" stroke="#80C8C8" stroke-width="1.5"/>
+        <text x="220" y="168" text-anchor="middle" fill="#0B3060" font-size="11" font-weight="700">cycle_plan__v</text>
+        <text x="220" y="183" text-anchor="middle" fill="#1B3A6B" font-size="9.5">Cycle Plan</text>
+        <text x="220" y="198" text-anchor="middle" fill="#4A5568" font-size="8">Targets · Freq · Segment</text>
+
+        <rect x="320" y="145" width="160" height="68" rx="6" fill="#EBF0F8" stroke="#80C8C8" stroke-width="1.5"/>
+        <text x="400" y="168" text-anchor="middle" fill="#0B3060" font-size="11" font-weight="700">clm_presentation__v</text>
+        <text x="400" y="183" text-anchor="middle" fill="#1B3A6B" font-size="9.5">CLM Presentation</text>
+        <text x="400" y="198" text-anchor="middle" fill="#4A5568" font-size="8">From PromoMats · MLR cleared</text>
+
+        <rect x="500" y="145" width="160" height="68" rx="6" fill="#EBF0F8" stroke="#80C8C8" stroke-width="1.5"/>
+        <text x="580" y="168" text-anchor="middle" fill="#0B3060" font-size="11" font-weight="700">approved_email__v</text>
+        <text x="580" y="183" text-anchor="middle" fill="#1B3A6B" font-size="9.5">Approved Email Template</text>
+        <text x="580" y="198" text-anchor="middle" fill="#4A5568" font-size="8">Consent-gated · Cadence-limited</text>
+
+        <rect x="680" y="145" width="160" height="68" rx="6" fill="#EBF0F8" stroke="#80C8C8" stroke-width="1.5"/>
+        <text x="760" y="168" text-anchor="middle" fill="#0B3060" font-size="11" font-weight="700">sample_inventory__v</text>
+        <text x="760" y="183" text-anchor="middle" fill="#1B3A6B" font-size="9.5">Rep Sample Inventory</text>
+        <text x="760" y="198" text-anchor="middle" fill="#4A5568" font-size="8">Lot # · Qty · Expiry</text>
+
+        <!-- Layer 3: Activity -->
+        <rect x="140" y="265" width="140" height="68" rx="6" fill="#F0E8FF" stroke="#80C8C8" stroke-width="1.5"/>
+        <text x="210" y="288" text-anchor="middle" fill="#3A0060" font-size="11" font-weight="700">call__v</text>
+        <text x="210" y="303" text-anchor="middle" fill="#6030A0" font-size="9.5">Call Report</text>
+        <text x="210" y="318" text-anchor="middle" fill="#4A5568" font-size="8">Commercial &amp; Medical types</text>
+
+        <rect x="300" y="265" width="140" height="68" rx="6" fill="#F0E8FF" stroke="#80C8C8" stroke-width="1.5"/>
+        <text x="370" y="288" text-anchor="middle" fill="#3A0060" font-size="11" font-weight="700">product_detail__v</text>
+        <text x="370" y="303" text-anchor="middle" fill="#6030A0" font-size="9.5">Product Detailed</text>
+        <text x="370" y="318" text-anchor="middle" fill="#4A5568" font-size="8">Child of call · Priority 1/2/3</text>
+
+        <rect x="460" y="265" width="140" height="68" rx="6" fill="#F0E8FF" stroke="#80C8C8" stroke-width="1.5"/>
+        <text x="530" y="288" text-anchor="middle" fill="#3A0060" font-size="11" font-weight="700">key_message__v</text>
+        <text x="530" y="303" text-anchor="middle" fill="#6030A0" font-size="9.5">Key Message Reaction</text>
+        <text x="530" y="318" text-anchor="middle" fill="#4A5568" font-size="8">Agree / Neutral / Disagree</text>
+
+        <rect x="620" y="265" width="140" height="68" rx="6" fill="#F0E8FF" stroke="#80C8C8" stroke-width="1.5"/>
+        <text x="690" y="288" text-anchor="middle" fill="#3A0060" font-size="11" font-weight="700">sample_transaction__v</text>
+        <text x="690" y="303" text-anchor="middle" fill="#6030A0" font-size="9.5">Sample Drop Record</text>
+        <text x="690" y="318" text-anchor="middle" fill="#4A5568" font-size="8">e-Sig · PDMA compliance</text>
+
+        <rect x="780" y="265" width="155" height="68" rx="6" fill="#F0E8FF" stroke="#80C8C8" stroke-width="1.5"/>
+        <text x="857" y="288" text-anchor="middle" fill="#3A0060" font-size="11" font-weight="700">medical_interaction__v</text>
+        <text x="857" y="303" text-anchor="middle" fill="#6030A0" font-size="9.5">MSL Scientific Exchange</text>
+        <text x="857" y="318" text-anchor="middle" fill="#4A5568" font-size="8">Firewalled from commercial</text>
+
+        <!-- Layer 4: Analytics -->
+        <rect x="140" y="385" width="180" height="68" rx="6" fill="#E8F5E8" stroke="#2A7A2A" stroke-width="1.5"/>
+        <text x="230" y="408" text-anchor="middle" fill="#1A4A1A" font-size="11" font-weight="700">cycle_plan_target__v</text>
+        <text x="230" y="423" text-anchor="middle" fill="#2A7A2A" font-size="9.5">Plan vs Actual Attainment</text>
+        <text x="230" y="438" text-anchor="middle" fill="#4A5568" font-size="8">Call rate · Reach · Freq</text>
+
+        <rect x="340" y="385" width="180" height="68" rx="6" fill="#E8F5E8" stroke="#2A7A2A" stroke-width="1.5"/>
+        <text x="430" y="408" text-anchor="middle" fill="#1A4A1A" font-size="11" font-weight="700">clm_engagement__v</text>
+        <text x="430" y="423" text-anchor="middle" fill="#2A7A2A" font-size="9.5">Slide Engagement Data</text>
+        <text x="430" y="438" text-anchor="middle" fill="#4A5568" font-size="8">Time · Swipes · Reactions</text>
+
+        <rect x="540" y="385" width="180" height="68" rx="6" fill="#E8F5E8" stroke="#2A7A2A" stroke-width="1.5"/>
+        <text x="630" y="408" text-anchor="middle" fill="#1A4A1A" font-size="11" font-weight="700">hcp_engagement_score__v</text>
+        <text x="630" y="423" text-anchor="middle" fill="#2A7A2A" font-size="9.5">Next Best Action Input</text>
+        <text x="630" y="438" text-anchor="middle" fill="#4A5568" font-size="8">Rx trend · Call history</text>
+
+        <rect x="740" y="385" width="180" height="68" rx="6" fill="#E8F5E8" stroke="#2A7A2A" stroke-width="1.5"/>
+        <text x="830" y="408" text-anchor="middle" fill="#1A4A1A" font-size="11" font-weight="700">insight__v</text>
+        <text x="830" y="423" text-anchor="middle" fill="#2A7A2A" font-size="9.5">MSL Field Insights</text>
+        <text x="830" y="438" text-anchor="middle" fill="#4A5568" font-size="8">Category · Priority · Area</text>
+
+        <!-- Connecting arrows (simplified vertical) -->
+        <line x1="210" y1="93" x2="210" y2="145" stroke="#0B8B8B" stroke-width="1.5" marker-end="url(#vcrm-arr)"/>
+        <line x1="210" y1="213" x2="210" y2="265" stroke="#80C8C8" stroke-width="1.5" marker-end="url(#vcrm-arr)"/>
+        <line x1="210" y1="333" x2="230" y2="385" stroke="#2A7A2A" stroke-width="1.5" marker-end="url(#vcrm-arr)"/>
+      </svg>
+    </div>
+    <figcaption class="vis-cap">Vault CRM Object Architecture — four layers from master data through planning, activity capture, and analytics</figcaption>
+  </figure>
+
+  <p>The key difference from Veeva CRM's Salesforce architecture: every object in Vault CRM has a <strong>native lifecycle</strong> (state machine), a <strong>built-in audit trail</strong> at the platform level, and <strong>object-type–based access control</strong> instead of profile + record-type combinations. This means fewer configuration layers, more consistent enforcement, and easier validation for 21 CFR Part 11 compliance.</p>
+
+  <!-- ═══════════════════════════════════
+       COMMERCIAL WORKFLOW
+  ═══════════════════════════════════ -->
+  <h2 id="vcrm-commercial">Commercial Workflow in Vault CRM</h2>
+
+  <p>For a territory representative, the Vault CRM daily workflow is: review the cycle plan priority list → prep the call → execute the call with CLM → submit the call report → send follow-up Approved Email. Every step is enforced by the platform — the rep cannot skip the e-signature on a sample drop, cannot use withdrawn CLM content, cannot send a non-approved email template. The compliance guardrails are the workflow, not a separate checklist.</p>
+
+  <h3>Commercial Objects &amp; Business Functions</h3>
+  <div class="crm-obj-grid" style="margin:20px 0;">
+    <div>
+      <div class="crm-section-label comm">◈ Commercial Call Objects — Vault CRM</div>
+
+      <div class="crm-obj-card comm" style="margin-bottom:12px;">
+        <div class="crm-obj-name comm">Call Report (call__v)</div>
+        <div class="crm-obj-api">call__v · Object Type: Detail Call / Phone Call / Virtual Call / Group Call</div>
+        <div class="crm-obj-desc">The primary activity record for every commercial interaction. Object Type determines which fields appear on the page layout. The call lifecycle: Draft → In Progress → Submitted → Locked. Once Submitted, the record is immutable — 21 CFR Part 11 compliant by platform design. Drives SFE metrics: call rate, reach and frequency, next call objective. The rep cannot submit without completing all required fields — validation is enforced at lifecycle state transition, not just on field save.</div>
+        <div class="crm-obj-fields">
+          <span class="crm-field-pill">call_date__v</span>
+          <span class="crm-field-pill">channel__v</span>
+          <span class="crm-field-pill">state__v (lifecycle)</span>
+          <span class="crm-field-pill">territory__v</span>
+          <span class="crm-field-pill">next_call_objective__v</span>
+        </div>
+      </div>
+
+      <div class="crm-obj-card comm" style="margin-bottom:12px;">
+        <div class="crm-obj-name comm">Product Detailed (product_detail__v)</div>
+        <div class="crm-obj-api">product_detail__v — child of call__v — one record per brand discussed</div>
+        <div class="crm-obj-desc">Records which product was detailed, at what priority (1st, 2nd, or 3rd), and which CLM presentation was used. The system enforces that only products linked to the rep's active cycle plan can be selected — reps cannot ad-hoc detail unapproved products. The Product Detailed record is the unit of SFE measurement for detail mix and promotional compliance.</div>
+        <div class="crm-obj-fields">
+          <span class="crm-field-pill">product__v</span>
+          <span class="crm-field-pill">detail_priority__v</span>
+          <span class="crm-field-pill">clm_presentation__v</span>
+          <span class="crm-field-pill">discussion_topic__v</span>
+        </div>
+      </div>
+
+      <div class="crm-obj-card comm" style="margin-bottom:12px;">
+        <div class="crm-obj-name comm">Key Message Reaction (key_message__v)</div>
+        <div class="crm-obj-api">key_message__v — child of call__v — one record per message discussed</div>
+        <div class="crm-obj-desc">The rep records the HCP's reaction to each approved key message: Strongly Agree / Agree / Neutral / Disagree / Not Discussed. These reactions flow directly to PromoMats analytics — because PromoMats and Vault CRM are the same Vault instance, brand teams see slide-level reaction data in real time without any integration middleware. Messages with persistently neutral or negative reactions trigger a PromoMats content review workflow automatically.</div>
+        <div class="crm-obj-fields">
+          <span class="crm-field-pill">key_message__v</span>
+          <span class="crm-field-pill">reaction__v</span>
+          <span class="crm-field-pill">product__v</span>
+        </div>
+      </div>
+
+      <div class="crm-obj-card comm" style="margin-bottom:12px;">
+        <div class="crm-obj-name comm">Approved Email (approved_email__v)</div>
+        <div class="crm-obj-api">approved_email__v — HCP consent-gated, cadence-enforced</div>
+        <div class="crm-obj-desc">Reps select from PromoMats-approved templates referenced directly in the same Vault instance — there is no template library to synchronize. The system gates sending on two conditions: HCP multichannel consent (consent__v object) must be on file, and the per-HCP cadence limit for the template type must not be exceeded. Engagement tracking (opens, clicks, forwards) creates an HCP digital engagement signal fed into Next Best Action scoring.</div>
+        <div class="crm-obj-fields">
+          <span class="crm-field-pill">email_template__v</span>
+          <span class="crm-field-pill">sent_date__v</span>
+          <span class="crm-field-pill">consent__v</span>
+          <span class="crm-field-pill">open_flag__v</span>
+        </div>
+      </div>
+
+      <div class="crm-obj-card comm" style="margin-bottom:12px;">
+        <div class="crm-obj-name comm">Cycle Plan &amp; Cycle Plan Target</div>
+        <div class="crm-obj-api">cycle_plan__v / cycle_plan_target__v — territory planning objects</div>
+        <div class="crm-obj-desc">The Cycle Plan defines the HCP target universe and call frequency goals for a promotional cycle (typically monthly or quarterly). Cycle Plan Target is the junction object: one record per HCP in the plan, holding the target call count, actual call count, and attainment percentage. This drives the rep's daily prioritised call list — the system ranks HCPs by attainment gap, segment priority, and Next Best Action score. Managers review attainment in real time without waiting for a reporting cycle.</div>
+        <div class="crm-obj-fields">
+          <span class="crm-field-pill">target_calls__v</span>
+          <span class="crm-field-pill">actual_calls__v</span>
+          <span class="crm-field-pill">start_date__v</span>
+          <span class="crm-field-pill">segment_priority__v</span>
+          <span class="crm-field-pill">attainment_pct__v</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>The Commercial Call Workflow — Step by Step</h3>
+  <figure class="vis-embed" aria-label="Vault CRM Commercial Call Workflow">
+    <div class="vis-label"><span class="vis-icon">◈</span> Vault CRM — Commercial Rep Daily Workflow</div>
+    <div class="vis-inner" style="padding:20px 16px;">
+      <svg viewBox="0 0 960 200" xmlns="http://www.w3.org/2000/svg" style="font-family:Inter,sans-serif;min-width:700px;display:block;">
+        <rect width="960" height="200" fill="#F0FAFA"/>
+        <defs>
+          <marker id="carr" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,1 L0,6 L6,3.5 z" fill="#D0EEEE"/></marker>
+        </defs>
+        <!-- 8 steps -->
+        <rect x="4" y="40" width="104" height="80" rx="5" fill="#E0F7F7" stroke="#0B8B8B" stroke-width="1.5"/>
+        <text x="56" y="66" text-anchor="middle" fill="#0B5050" font-size="11" font-weight="700">① Plan</text>
+        <text x="56" y="81" text-anchor="middle" fill="#0B6B6B" font-size="9">Cycle plan target</text>
+        <text x="56" y="94" text-anchor="middle" fill="#4A5568" font-size="8">Priority HCP list</text>
+        <text x="56" y="111" text-anchor="middle" fill="#4A5568" font-size="8">NBA score · Attainment</text>
+
+        <line x1="108" y1="80" x2="118" y2="80" stroke="#0B8B8B" stroke-width="1.5" marker-end="url(#carr)"/>
+
+        <rect x="118" y="40" width="104" height="80" rx="5" fill="#E0F7F7" stroke="#0B8B8B" stroke-width="1.5"/>
+        <text x="170" y="66" text-anchor="middle" fill="#0B5050" font-size="11" font-weight="700">② Prep</text>
+        <text x="170" y="81" text-anchor="middle" fill="#0B6B6B" font-size="9">Review account__v</text>
+        <text x="170" y="94" text-anchor="middle" fill="#4A5568" font-size="8">Prior calls · Rx data</text>
+        <text x="170" y="111" text-anchor="middle" fill="#4A5568" font-size="8">Load CLM deck</text>
+
+        <line x1="222" y1="80" x2="232" y2="80" stroke="#0B8B8B" stroke-width="1.5" marker-end="url(#carr)"/>
+
+        <rect x="232" y="40" width="104" height="80" rx="5" fill="#EBF0F8" stroke="#80C8C8" stroke-width="1.5"/>
+        <text x="284" y="66" text-anchor="middle" fill="#0B3060" font-size="11" font-weight="700">③ CLM</text>
+        <text x="284" y="81" text-anchor="middle" fill="#1B3A6B" font-size="9">Present approved</text>
+        <text x="284" y="94" text-anchor="middle" fill="#4A5568" font-size="8">content from</text>
+        <text x="284" y="111" text-anchor="middle" fill="#4A5568" font-size="8">PromoMats live</text>
+
+        <line x1="336" y1="80" x2="346" y2="80" stroke="#0B8B8B" stroke-width="1.5" marker-end="url(#carr)"/>
+
+        <rect x="346" y="40" width="104" height="80" rx="5" fill="#F0E8FF" stroke="#80C8C8" stroke-width="1.5"/>
+        <text x="398" y="62" text-anchor="middle" fill="#3A0060" font-size="11" font-weight="700">④ Capture</text>
+        <text x="398" y="77" text-anchor="middle" fill="#6030A0" font-size="9">Key message</text>
+        <text x="398" y="90" text-anchor="middle" fill="#6030A0" font-size="9">reactions</text>
+        <text x="398" y="103" text-anchor="middle" fill="#4A5568" font-size="8">call__v created</text>
+        <text x="398" y="116" text-anchor="middle" fill="#4A5568" font-size="8">Draft → In Progress</text>
+
+        <line x1="450" y1="80" x2="460" y2="80" stroke="#0B8B8B" stroke-width="1.5" marker-end="url(#carr)"/>
+
+        <rect x="460" y="40" width="104" height="80" rx="5" fill="#EAF6F6" stroke="#80C8C8" stroke-width="2"/>
+        <text x="512" y="62" text-anchor="middle" fill="#0A6B6B" font-size="11" font-weight="700">⑤ Sample</text>
+        <text x="512" y="77" text-anchor="middle" fill="#0A6B6B" font-size="9">If applicable:</text>
+        <text x="512" y="90" text-anchor="middle" fill="#0A6B6B" font-size="9">HCP e-signature</text>
+        <text x="512" y="103" text-anchor="middle" fill="#5A7A30" font-size="8">DEA check · PDMA</text>
+        <text x="512" y="116" text-anchor="middle" fill="#5A7A30" font-size="8">Inventory decremented</text>
+
+        <line x1="564" y1="80" x2="574" y2="80" stroke="#0B8B8B" stroke-width="1.5" marker-end="url(#carr)"/>
+
+        <rect x="574" y="40" width="104" height="80" rx="5" fill="#F0E8FF" stroke="#80C8C8" stroke-width="1.5"/>
+        <text x="626" y="62" text-anchor="middle" fill="#3A0060" font-size="11" font-weight="700">⑥ Submit</text>
+        <text x="626" y="77" text-anchor="middle" fill="#6030A0" font-size="9">Lifecycle →</text>
+        <text x="626" y="90" text-anchor="middle" fill="#6030A0" font-size="9">Submitted</text>
+        <text x="626" y="103" text-anchor="middle" fill="#4A5568" font-size="8">Record locked</text>
+        <text x="626" y="116" text-anchor="middle" fill="#4A5568" font-size="8">Audit trail sealed</text>
+
+        <line x1="678" y1="80" x2="688" y2="80" stroke="#0B8B8B" stroke-width="1.5" marker-end="url(#carr)"/>
+
+        <rect x="688" y="40" width="104" height="80" rx="5" fill="#E0F7F7" stroke="#0B8B8B" stroke-width="1.5"/>
+        <text x="740" y="62" text-anchor="middle" fill="#0B5050" font-size="11" font-weight="700">⑦ Email</text>
+        <text x="740" y="77" text-anchor="middle" fill="#0B6B6B" font-size="9">Approved Email</text>
+        <text x="740" y="90" text-anchor="middle" fill="#0B6B6B" font-size="9">follow-up</text>
+        <text x="740" y="103" text-anchor="middle" fill="#4A5568" font-size="8">Consent check</text>
+        <text x="740" y="116" text-anchor="middle" fill="#4A5568" font-size="8">Cadence enforced</text>
+
+        <line x1="792" y1="80" x2="802" y2="80" stroke="#0B8B8B" stroke-width="1.5" marker-end="url(#carr)"/>
+
+        <rect x="802" y="40" width="154" height="80" rx="5" fill="#E8F5E8" stroke="#2A7A2A" stroke-width="1.5"/>
+        <text x="879" y="62" text-anchor="middle" fill="#1A4A1A" font-size="11" font-weight="700">⑧ Analytics</text>
+        <text x="879" y="77" text-anchor="middle" fill="#2A7A2A" font-size="9">Cycle attainment</text>
+        <text x="879" y="90" text-anchor="middle" fill="#2A7A2A" font-size="9">updated · NBA</text>
+        <text x="879" y="103" text-anchor="middle" fill="#4A5568" font-size="8">Engagement signal</text>
+        <text x="879" y="116" text-anchor="middle" fill="#4A5568" font-size="8">PromoMats feedback</text>
+      </svg>
+    </div>
+    <figcaption class="vis-cap">Vault CRM commercial rep workflow — from cycle plan through call capture to analytics feedback loop</figcaption>
+  </figure>
+
+  <!-- ═══════════════════════════════════
+       MSL WORKFLOW
+  ═══════════════════════════════════ -->
+  <h2 id="vcrm-msl">MSL Workflow in Vault CRM</h2>
+
+  <p>The MSL's experience in Vault CRM is architecturally distinct from the commercial rep's — not just through different page layouts, but through different Object Types on the same call__v object. The MSL Call Object Type omits all promotional fields: no CLM presentation selector, no product detail priority, no sample drop. What the MSL sees is a scientific exchange workspace with free-text discussion topics, insight capture, and medical inquiry routing.</p>
+
+  <p>The firewall in Vault CRM is cleaner than in Veeva CRM. In the Salesforce-based system, firewall enforcement relied on profile + record type combinations that could become inconsistent across org configuration updates. In Vault CRM, the firewall is enforced at the Object Type level within the Security Profile — a Commercial Rep Security Profile cannot access the Medical Object Types, period. There is no configuration path that accidentally bridges the firewall.</p>
+
+  <h3>MSL Objects &amp; Scientific Exchange Workflow</h3>
+  <div class="crm-obj-grid" style="margin:20px 0;">
+    <div>
+      <div class="crm-section-label med">◈ MSL Objects — Vault CRM</div>
+
+      <div class="crm-obj-card med" style="margin-bottom:12px;">
+        <div class="crm-obj-name med">MSL Call Report (call__v — Medical Object Type)</div>
+        <div class="crm-obj-api">call__v · Object Type: MSL Interaction / Medical Call / Congress Engagement</div>
+        <div class="crm-obj-desc">The same call__v object as commercial, but under the Medical Object Type which surfaces entirely different fields: scientific discussion topics (free text), therapeutic area focus, exchange quality rating, and insight category. No product detail priority, no CLM deck selector, no sample fields. The record is invisible to commercial reps — Object Type security enforces the firewall at the data layer, not just through UI configuration.</div>
+        <div class="crm-obj-fields">
+          <span class="crm-field-pill">discussion_topic__v</span>
+          <span class="crm-field-pill">scientific_exchange_type__v</span>
+          <span class="crm-field-pill">ta_focus__v</span>
+          <span class="crm-field-pill">insight_category__v</span>
+          <span class="crm-field-pill">exchange_quality__v</span>
+        </div>
+      </div>
+
+      <div class="crm-obj-card med" style="margin-bottom:12px;">
+        <div class="crm-obj-name med">Medical Inquiry (medical_inquiry__v)</div>
+        <div class="crm-obj-api">medical_inquiry__v — routes to Vault Medical response letter workflow</div>
+        <div class="crm-obj-desc">When an HCP raises an unsolicited question — on-label or off-label — the MSL (or commercial rep routing to medical) creates a Medical Inquiry record. Because Vault CRM and Vault MedComm run on the same Vault instance, the inquiry is immediately visible to the medical information team in MedComm without any API call or data transfer. The response letter workflow is triggered natively in Vault. An adverse event flag on the inquiry automatically initiates the pharmacovigilance notification workflow.</div>
+        <div class="crm-obj-fields">
+          <span class="crm-field-pill">inquiry_type__v</span>
+          <span class="crm-field-pill">product__v</span>
+          <span class="crm-field-pill">question_text__v</span>
+          <span class="crm-field-pill">ae_flag__v</span>
+          <span class="crm-field-pill">response_status__v</span>
+        </div>
+      </div>
+
+      <div class="crm-obj-card med" style="margin-bottom:12px;">
+        <div class="crm-obj-name med">Field Insight (insight__v)</div>
+        <div class="crm-obj-api">insight__v — structured scientific observation from the field</div>
+        <div class="crm-obj-desc">Every MSL call can generate one or more Insight records — structured observations about HCP scientific thinking, competitive intelligence, unmet medical needs, or publication interest. Insights are categorized (Clinical / Market / Competitive / Scientific / Patient), prioritised, and surfaced to the MSL Director's dashboard. Vault's native reporting layer means no separate BI tool is needed for insight trend analysis — the data lives and is analysed in the same system.</div>
+        <div class="crm-obj-fields">
+          <span class="crm-field-pill">category__v</span>
+          <span class="crm-field-pill">priority__v</span>
+          <span class="crm-field-pill">ta_area__v</span>
+          <span class="crm-field-pill">action_required__v</span>
+        </div>
+      </div>
+
+      <div class="crm-obj-card med" style="margin-bottom:12px;">
+        <div class="crm-obj-name med">KOL Profile (account__v — KOL Object Type)</div>
+        <div class="crm-obj-api">account__v · Object Type: KOL — extends the standard HCP account</div>
+        <div class="crm-obj-desc">The KOL Object Type extends the standard account record with fields specific to scientific engagement management: publications count, congress presentations, advisory board history, IIS grant history, tier classification (National / Regional / Local), and MSL engagement plan status. Both commercial and medical teams can read the KOL account — but commercial sees the promotional engagement history, and medical sees the scientific exchange history. Neither can see the other's activity records.</div>
+        <div class="crm-obj-fields">
+          <span class="crm-field-pill">kol_tier__v</span>
+          <span class="crm-field-pill">publications_count__v</span>
+          <span class="crm-field-pill">advisory_board_history__v</span>
+          <span class="crm-field-pill">iis_grant_status__v</span>
+          <span class="crm-field-pill">engagement_plan_status__v</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <figure class="vis-embed" aria-label="Vault CRM MSL Scientific Exchange Workflow">
+    <div class="vis-label"><span class="vis-icon">◈</span> Vault CRM MSL — Scientific Exchange Workflow &amp; Firewall</div>
+    <div class="vis-inner" style="padding:20px 16px;">
+      <svg viewBox="0 0 960 260" xmlns="http://www.w3.org/2000/svg" style="font-family:Inter,sans-serif;min-width:700px;display:block;">
+        <rect width="960" height="260" fill="#F0FAFA"/>
+        <!-- Phase columns -->
+        <rect x="0" y="0" width="192" height="28" fill="#D0EEEE" rx="0"/>
+        <text x="96" y="18" text-anchor="middle" fill="#0A5555" font-size="10" font-weight="700">PRE-MEETING</text>
+        <rect x="192" y="0" width="288" height="28" fill="#EAF6F6" rx="0"/>
+        <text x="336" y="18" text-anchor="middle" fill="#0A3D62" font-size="10" font-weight="700">SCIENTIFIC EXCHANGE</text>
+        <rect x="480" y="0" width="240" height="28" fill="#EAF6F6" rx="0"/>
+        <text x="600" y="18" text-anchor="middle" fill="#2D3D6B" font-size="10" font-weight="700">POST-CALL DOCUMENTATION</text>
+        <rect x="720" y="0" width="240" height="28" fill="#EAF6F6" rx="0"/>
+        <text x="840" y="18" text-anchor="middle" fill="#0A6B6B" font-size="10" font-weight="700">FOLLOW-UP &amp; ANALYTICS</text>
+        <line x1="192" y1="0" x2="192" y2="260" stroke="#80C8C8" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="480" y1="0" x2="480" y2="260" stroke="#80C8C8" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="720" y1="0" x2="720" y2="260" stroke="#80C8C8" stroke-width="1" stroke-dasharray="4,3"/>
+
+        <!-- Row 1: Objects -->
+        <text x="480" y="46" text-anchor="middle" fill="#4A5568" font-size="8" font-weight="600" letter-spacing="1">VAULT CRM OBJECTS USED</text>
+        <rect x="8" y="52" width="176" height="48" rx="5" fill="#E0F7F7" stroke="#0B8B8B" stroke-width="1"/>
+        <text x="96" y="70" text-anchor="middle" fill="#0B5050" font-size="10" font-weight="700">account__v (KOL type)</text>
+        <text x="96" y="84" text-anchor="middle" fill="#4A5568" font-size="8.5">Prior exchanges · Tier · Publications</text>
+        <text x="96" y="96" text-anchor="middle" fill="#4A5568" font-size="8.5">Advisory board history</text>
+
+        <rect x="200" y="52" width="136" height="48" rx="5" fill="#E0F7F7" stroke="#0B8B8B" stroke-width="1"/>
+        <text x="268" y="70" text-anchor="middle" fill="#0B5050" font-size="10" font-weight="700">call__v</text>
+        <text x="268" y="84" text-anchor="middle" fill="#4A5568" font-size="8.5">Medical Object Type</text>
+        <text x="268" y="96" text-anchor="middle" fill="#4A5568" font-size="8.5">Non-promo fields only</text>
+
+        <rect x="346" y="52" width="124" height="48" rx="5" fill="#E0F7F7" stroke="#0B8B8B" stroke-width="1"/>
+        <text x="408" y="70" text-anchor="middle" fill="#0B5050" font-size="10" font-weight="700">medical_inquiry__v</text>
+        <text x="408" y="84" text-anchor="middle" fill="#4A5568" font-size="8.5">If HCP raises question</text>
+        <text x="408" y="96" text-anchor="middle" fill="#4A5568" font-size="8.5">Routes to MedComm</text>
+
+        <rect x="488" y="52" width="224" height="48" rx="5" fill="#F0E8FF" stroke="#80C8C8" stroke-width="1"/>
+        <text x="600" y="70" text-anchor="middle" fill="#3A0060" font-size="10" font-weight="700">insight__v + call__v submitted</text>
+        <text x="600" y="84" text-anchor="middle" fill="#4A5568" font-size="8.5">Lifecycle → Submitted · Record locked</text>
+        <text x="600" y="96" text-anchor="middle" fill="#4A5568" font-size="8.5">Invisible to commercial profiles</text>
+
+        <rect x="728" y="52" width="224" height="48" rx="5" fill="#E8F5E8" stroke="#2A7A2A" stroke-width="1"/>
+        <text x="840" y="70" text-anchor="middle" fill="#1A4A1A" font-size="10" font-weight="700">SRL via Vault MedComm</text>
+        <text x="840" y="84" text-anchor="middle" fill="#4A5568" font-size="8.5">Response letter natively routed</text>
+        <text x="840" y="96" text-anchor="middle" fill="#4A5568" font-size="8.5">Insight trends → MSL dashboard</text>
+
+        <!-- Row 2: MSL Actions -->
+        <text x="480" y="122" text-anchor="middle" fill="#4A5568" font-size="8" font-weight="600" letter-spacing="1">MSL ACTION</text>
+        <rect x="8" y="128" width="176" height="52" rx="5" fill="#F0FAFA" stroke="#99E6E6" stroke-width="1"/>
+        <text x="96" y="146" text-anchor="middle" fill="#2D3748" font-size="9.5">Review KOL profile in Vault CRM</text>
+        <text x="96" y="160" text-anchor="middle" fill="#2D3748" font-size="9.5">Load Vault Medical scientific deck</text>
+        <text x="96" y="172" text-anchor="middle" fill="#4A5568" font-size="8.5">Check prior insight categories</text>
+
+        <rect x="200" y="128" width="270" height="52" rx="5" fill="#F0FAFA" stroke="#99E6E6" stroke-width="1"/>
+        <text x="335" y="146" text-anchor="middle" fill="#2D3748" font-size="9.5">On-label scientific discussion via Vault Medical content</text>
+        <text x="335" y="160" text-anchor="middle" fill="#2D3748" font-size="9.5">If off-label unsolicited → medical_inquiry__v created</text>
+        <text x="335" y="172" text-anchor="middle" fill="#4A5568" font-size="8.5">Cannot show PromoMats promotional CLM — system blocked by Object Type</text>
+
+        <rect x="488" y="128" width="224" height="52" rx="5" fill="#F0FAFA" stroke="#99E6E6" stroke-width="1"/>
+        <text x="600" y="146" text-anchor="middle" fill="#2D3748" font-size="9.5">Submit call report + insights</text>
+        <text x="600" y="160" text-anchor="middle" fill="#2D3748" font-size="9.5">Audit trail sealed by Vault platform</text>
+        <text x="600" y="172" text-anchor="middle" fill="#4A5568" font-size="8.5">Data visible to MSL Director only</text>
+
+        <rect x="728" y="128" width="224" height="52" rx="5" fill="#F0FAFA" stroke="#99E6E6" stroke-width="1"/>
+        <text x="840" y="146" text-anchor="middle" fill="#2D3748" font-size="9.5">MedComm team handles SRL</text>
+        <text x="840" y="160" text-anchor="middle" fill="#2D3748" font-size="9.5">MSL Director reviews insight patterns</text>
+        <text x="840" y="172" text-anchor="middle" fill="#4A5568" font-size="8.5">Evidence gaps → MA strategy update</text>
+
+        <!-- Row 3: Firewall guardrails -->
+        <text x="480" y="202" text-anchor="middle" fill="#8B1A1A" font-size="8" font-weight="700" letter-spacing="1">VAULT CRM COMMERCIAL-MEDICAL FIREWALL — ENFORCED BY OBJECT TYPE SECURITY</text>
+        <rect x="8" y="208" width="440" height="44" rx="5" fill="#FFF8E8" stroke="#FDE68A" stroke-width="1.5"/>
+        <text x="228" y="226" text-anchor="middle" fill="#6B4A00" font-size="9" font-weight="700">Commercial Rep Security Profile: NO access to Medical Object Types</text>
+        <text x="228" y="240" text-anchor="middle" fill="#6B4A00" font-size="8.5">call__v (Medical type) · medical_inquiry__v · insight__v → all invisible to commercial</text>
+        <text x="228" y="252" text-anchor="middle" fill="#6B4A00" font-size="8.5">Enforced at platform level, not UI configuration — cannot be misconfigured</text>
+
+        <rect x="460" y="208" width="492" height="44" rx="5" fill="#F0FFF0" stroke="#68D391" stroke-width="1.5"/>
+        <text x="706" y="226" text-anchor="middle" fill="#1A5A1A" font-size="9" font-weight="700">MSL Security Profile: NO access to Commercial Object Types</text>
+        <text x="706" y="240" text-anchor="middle" fill="#1A5A1A" font-size="8.5">call__v (Detail Call type) · product_detail__v · sample_transaction__v → all invisible to MSL</text>
+        <text x="706" y="252" text-anchor="middle" fill="#1A5A1A" font-size="8.5">Both share account__v foundation — HCP record visible to both, activity firewalled</text>
+      </svg>
+    </div>
+    <figcaption class="vis-cap">Vault CRM MSL scientific exchange workflow and commercial-medical firewall — enforced natively at Object Type level</figcaption>
+  </figure>
+
+  <!-- ═══════════════════════════════════
+       SAMPLE MANAGEMENT
+  ═══════════════════════════════════ -->
+  <h2 id="vcrm-sample">Sample Management — PDMA Compliance in Vault CRM</h2>
+
+  <p>The Prescription Drug Marketing Act (21 CFR Part 203) requires that every drug sample transferred to a licensed HCP be documented with a signed receipt, lot number, quantity, and an auditable chain of custody. In Vault CRM, PDMA compliance is enforced at the platform level — the rep cannot submit a Call Report containing a sample transaction without an HCP e-signature. The 21 CFR Part 11 audit trail is native to Vault, not an overlay bolted onto Salesforce.</p>
+
+  <p>Three specific improvements over Veeva CRM's PDMA implementation are worth noting. First, the e-signature is captured using Vault's native electronic signature module — the same module used across Vault PromoMats and Vault Quality — so signature validation is part of the central platform validation package, not a separate CRM-specific validation. Second, lot number and expiry tracking are enforced at object save: a sample transaction cannot be created against an expired lot. Third, the quarterly reconciliation report is generated natively from the sample_transaction__v object, without a separate reporting extract — the data never leaves the Vault compliance envelope.</p>
+
+  <div class="crm-obj-grid" style="margin:20px 0;">
+    <div>
+      <div class="crm-section-label comm">◈ Sample Management Objects — Vault CRM</div>
+
+      <div class="crm-obj-card comm" style="margin-bottom:12px;">
+        <div class="crm-obj-name comm">Sample Transaction (sample_transaction__v)</div>
+        <div class="crm-obj-api">sample_transaction__v — PDMA-compliant sample drop record</div>
+        <div class="crm-obj-desc">Created when a rep transfers samples to an HCP. Required fields enforced by lifecycle entry criteria: lot number (validated against sample_inventory__v), quantity, HCP DEA registration check (via Network MDM link), and e-signature capture. The transaction lifecycle: Pending → Signed → Submitted → Locked. A locked transaction cannot be modified — the audit trail is immutable. Adverse event reporting workflows are auto-triggered if the rep marks an unexpected product reaction during the same call.</div>
+        <div class="crm-obj-fields">
+          <span class="crm-field-pill">lot_number__v</span>
+          <span class="crm-field-pill">quantity__v</span>
+          <span class="crm-field-pill">hcp_signature__v</span>
+          <span class="crm-field-pill">dea_number__v</span>
+          <span class="crm-field-pill">expiry_date__v</span>
+        </div>
+      </div>
+
+      <div class="crm-obj-card comm" style="margin-bottom:12px;">
+        <div class="crm-obj-name comm">Sample Inventory (sample_inventory__v)</div>
+        <div class="crm-obj-api">sample_inventory__v — rep's live sample balance</div>
+        <div class="crm-obj-desc">Tracks the rep's current inventory by product, lot number, and quantity. Every sample_transaction__v decrements the balance in real time. When balance reaches a reorder threshold, the rep is notified within the app. Annual physical count results are reconciled against the inventory object — discrepancies flag a compliance event routed to the Sample Management team. The inventory record is updated by the distribution system when new lots are allocated to the rep's territory.</div>
+        <div class="crm-obj-fields">
+          <span class="crm-field-pill">product__v</span>
+          <span class="crm-field-pill">lot_number__v</span>
+          <span class="crm-field-pill">quantity_on_hand__v</span>
+          <span class="crm-field-pill">reorder_threshold__v</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       TERRITORY MANAGEMENT
+  ═══════════════════════════════════ -->
+  <h2 id="vcrm-territory">Territory Management — Vault Align Integration</h2>
+
+  <p>Vault CRM's territory structure is managed by <strong>Vault Align</strong> — the Vault-native territory alignment platform that replaces the Veeva Align integration with Salesforce Territory Management. The transition from Veeva Align (which published data into Salesforce CRM via the Territory Snapshot File) to Vault Align is one of the most operationally significant changes in the Vault CRM migration.</p>
+
+  <p>In Vault Align, territory design, HCP assignment, and cycle plan targets are managed in the same Vault platform as CRM. Changes made in Vault Align propagate to Vault CRM instantly — there is no TSF (Territory Snapshot File) export/import cycle, no batch sync, no overnight processing window. When a District Manager realigns territories mid-cycle — moving 40 HCPs from Rep A's territory to Rep B's — the affected reps see their updated account lists immediately.</p>
+
+  <div class="crm-obj-grid" style="margin:20px 0;">
+    <div>
+      <div class="crm-section-label comm">◈ Territory &amp; Alignment Objects — Vault CRM</div>
+
+      <div class="crm-obj-card comm" style="margin-bottom:12px;">
+        <div class="crm-obj-name comm">Territory (territory__v)</div>
+        <div class="crm-obj-api">territory__v — geographic or account-based scope</div>
+        <div class="crm-obj-desc">Defines the rep's working geography (zip-code based) or account portfolio (IDN, hospital, specialty account-based). Territory hierarchy: National → Regional → District → Territory. Each level is configured in Vault Align and published to Vault CRM. Role hierarchy in CRM mirrors territory hierarchy — a District Manager's role automatically grants visibility into all accounts within their district's territories.</div>
+        <div class="crm-obj-fields">
+          <span class="crm-field-pill">territory_id__v</span>
+          <span class="crm-field-pill">territory_type__v</span>
+          <span class="crm-field-pill">alignment_version__v</span>
+          <span class="crm-field-pill">effective_date__v</span>
+        </div>
+      </div>
+
+      <div class="crm-obj-card comm" style="margin-bottom:12px;">
+        <div class="crm-obj-name comm">Account Territory Assignment (account_territory__v)</div>
+        <div class="crm-obj-api">account_territory__v — links HCP/HCO to territory</div>
+        <div class="crm-obj-desc">The junction object that assigns each HCP or HCO account to one or more territories. Multi-territory assignment supports shared accounts (e.g., a hospital system covered by multiple KAMs). When Vault Align publishes a new alignment version, these junction records are updated atomically — no partial state where some reps see the old alignment and others see the new one.</div>
+        <div class="crm-obj-fields">
+          <span class="crm-field-pill">account__v</span>
+          <span class="crm-field-pill">territory__v</span>
+          <span class="crm-field-pill">alignment_version__v</span>
+          <span class="crm-field-pill">primary_flag__v</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       ANALYTICS & SFE
+  ═══════════════════════════════════ -->
+  <h2 id="vcrm-analytics">Analytics, SFE &amp; Next Best Action</h2>
+
+  <p>Sales Force Effectiveness (SFE) analytics in Vault CRM are served natively from the Vault reporting layer — no separate BI tool required for core operational metrics. Managers access cycle plan attainment, reach and frequency, call rate, and message adoption from within the CRM interface. Advanced analytics (predictive HCP segmentation, market share correlation, omnichannel engagement scoring) are available through Vault CRM's embedded AI layer or exported to enterprise BI platforms via the Vault API.</p>
+
+  <h3>Key SFE Metrics Available Natively</h3>
+  <div class="crm-obj-grid" style="margin:16px 0;">
+    <div>
+      <div class="crm-section-label comm">◈ SFE Analytics Objects &amp; Dashboards</div>
+
+      <div class="crm-obj-card comm" style="margin-bottom:10px;">
+        <div class="crm-obj-name comm">Cycle Plan Attainment</div>
+        <div class="crm-obj-api">Derived from cycle_plan_target__v — real-time plan vs actual</div>
+        <div class="crm-obj-desc">For each HCP in the cycle plan, the system tracks: Target Calls, Actual Calls, Attainment %, and Days Remaining in Cycle. Reps see their daily call list ranked by attainment gap + segment priority. Managers see a district roll-up — rep attainment vs. district average — without needing a report extract. End-of-cycle attainment drives incentive compensation calculations in the IC system.</div>
+      </div>
+
+      <div class="crm-obj-card comm" style="margin-bottom:10px;">
+        <div class="crm-obj-name comm">Reach &amp; Frequency (R&amp;F)</div>
+        <div class="crm-obj-api">Calculated from call__v records against cycle_plan_target__v</div>
+        <div class="crm-obj-desc">Reach = the percentage of targeted HCPs called at least once in the cycle. Frequency = average calls per reached HCP. Both metrics are standard KPIs in pharmaceutical SFE — reach above 80% and frequency within the 2–4 calls/quarter target range indicate a healthy promotional campaign. These values update in real time as call reports are submitted.</div>
+      </div>
+
+      <div class="crm-obj-card med" style="margin-bottom:10px;">
+        <div class="crm-obj-name med">Next Best Action (NBA)</div>
+        <div class="crm-obj-api">AI-driven recommendation surface within Vault CRM mobile app</div>
+        <div class="crm-obj-desc">Next Best Action synthesises: Rx trend data (from IQVIA/Symphony loaded via Vault API), HCP engagement history (calls, emails, CLM reactions), attainment gap vs. cycle plan target, and approved email open rates. The output is a ranked daily call list with a recommended action for each HCP: "Detail product X — Rx trend declining — last called 28 days ago — two approved emails opened this month." NBA recommendations are visible in the rep's mobile app home screen and update overnight as new data arrives.</div>
+      </div>
+
+      <div class="crm-obj-card med" style="margin-bottom:10px;">
+        <div class="crm-obj-name med">CLM Message Adoption Analytics</div>
+        <div class="crm-obj-api">clm_engagement__v + key_message__v — slide-level engagement heatmap</div>
+        <div class="crm-obj-desc">Because Vault CRM and Vault PromoMats are the same platform, engagement data (which slides were shown, for how long, with what reaction) flows directly into PromoMats analytics without an ETL pipeline. Brand managers see a slide-level heatmap: which messages are landing (high positive reaction, long dwell time), which are being skipped, and which are generating negative reactions. This feedback loop is the foundation of evidence-based message optimisation — MLR revision cycles are triggered by data, not intuition.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       ADMIN SETUP
+  ═══════════════════════════════════ -->
+  <h2 id="vcrm-admin">Admin Setup — Step by Step</h2>
+
+  <p>Marcus spent his first week in the Vault CRM admin console following this setup sequence. Here is the story-driven walkthrough, step by step:</p>
+
+  <h3>Step 1: Configure Your Vault Instance</h3>
+  <p>Every Vault CRM deployment starts with a provisioned Vault instance. Veeva provides a Production vault and a Sandbox vault. The admin's first tasks are:</p>
+  <ul>
+    <li>Set the <strong>timezone, date formats, and locale</strong> in Admin → Settings → General Settings</li>
+    <li>Configure <strong>password policies</strong> (complexity, rotation frequency, SSO integration) under Admin → Security → Password Policies</li>
+    <li>Enable <strong>SAML SSO</strong> for your identity provider (Okta, Azure AD, Ping) so users log in with their corporate credentials — not a separate Vault password</li>
+    <li>Review <strong>IP range restrictions</strong> to limit admin console access to corporate IP ranges</li>
+  </ul>
+
+  <h3>Step 2: Set Up Object Types</h3>
+  <p>Object Types (replacing Salesforce Record Types) define the categories of records within each object. For the Account object, typical Object Types are: <strong>HCP</strong> (for physicians, NPs, PAs), <strong>HCO</strong> (hospitals, clinics, IDNs), and <strong>Payer Organization</strong>. For Call reports: <strong>Detail Call</strong>, <strong>MSL Interaction</strong>, <strong>Phone Call</strong>, <strong>Virtual Call</strong>.</p>
+  <p>Navigate to Admin → Objects → [Object Name] → Object Types → Create. Assign each Object Type its own page layout, so an HCP account page shows different fields than an HCO account page.</p>
+
+  <h3>Step 3: Configure Page Layouts</h3>
+  <p>Page Layouts in Vault CRM control which fields appear on a record, in what order, and which sections are visible. Unlike Salesforce, where layouts are assigned per Profile + Record Type combination, Vault assigns layouts per Object Type — simpler and less error-prone. Go to Admin → Objects → [Object] → Page Layouts → Create. Drag fields into sections. Mark required fields. Hide fields that do not apply to a given type.</p>
+
+  <h3>Step 4: Define Picklist Values</h3>
+  <p>Picklist values (drop-down options) in Vault are centrally managed under Admin → Picklists. A single picklist can be reused across multiple objects and fields. This is a significant improvement over Salesforce where each field's picklist was managed independently — in Vault, updating a picklist in one place updates all fields referencing it simultaneously.</p>
+
+  <h3>Step 5: Configure Lifecycles</h3>
+  <p>Lifecycles replace Salesforce workflows and control how records move through defined states. A Call Report lifecycle might have states: <strong>Planned → In Progress → Submitted → Approved → Locked</strong>. Entry actions (auto-populate fields when entering a state), entry criteria (conditions that must be true to transition), and allowed users (who can move the record to which state) are all configured here. Navigate to Admin → Objects → [Object] → Lifecycles.</p>
+
+  <h3>Step 6: Set Up Product Catalog</h3>
+  <p>Products are managed under the Product object. Create one Product record per brand/formulation/indication. Link each Product to the CLM Presentations and Approved Email templates that reps are authorized to use for that product. Assign products to Cycle Plans to control which products appear in a rep's detail priority.</p>
+
+  <!-- ═══════════════════════════════════
+       USER MANAGEMENT
+  ═══════════════════════════════════ -->
+  <h2 id="vcrm-user-mgmt">User Management in Vault CRM</h2>
+
+  <p>Marcus's second week was spent building the user model. In Vault CRM, every user sits at the intersection of four control layers: <strong>Security Profile</strong> (what objects they can see), <strong>Permission Sets</strong> (what actions they can take), <strong>Role</strong> (where they sit in the hierarchy), and <strong>Object Type access</strong> (which record categories they can work with).</p>
+
+  <h3>Creating a New User</h3>
+  <p>In the Vault admin console, navigate to Admin → Users &amp; Groups → Users → Create. Fill in:</p>
+  <ul>
+    <li><strong>User Name</strong> (must be unique; typically corporate email)</li>
+    <li><strong>Security Profile</strong> — the base permission set</li>
+    <li><strong>License Type</strong> — Full User, Read-Only, or Portal User</li>
+    <li><strong>Default Locale, Timezone, Language</strong></li>
+    <li><strong>Active status</strong> — inactive users cannot log in but their records are preserved</li>
+  </ul>
+  <p>Then assign the user to a <strong>Group</strong> (e.g., Territory Sales Team, MSL Team) and a <strong>Role</strong> in the role hierarchy. The role determines data visibility — a rep sees only accounts in their territory; a regional manager sees all accounts in their region.</p>
+
+  <h3>Bulk User Management</h3>
+  <p>For large deployments (hundreds or thousands of reps), use the <strong>Vault Loader</strong> or the <strong>User API</strong> to bulk-create and update users via CSV upload. Each row maps to a user record. The same Vault Loader can manage territory assignments, product authorizations, and cycle plan targets in bulk — making periodic field force realignment manageable without manual data entry.</p>
+
+  <!-- ═══════════════════════════════════
+       PERMISSION SETS
+  ═══════════════════════════════════ -->
+  <h2 id="vcrm-permissions">Permission Sets &amp; Security Model</h2>
+
+  <p>The Vault CRM security model is both simpler and more powerful than Salesforce. Here is how it works:</p>
+
+  <h3>Security Profiles (Base Permissions)</h3>
+  <p>A Security Profile defines the baseline: which objects a user can access (read, create, edit, delete), which fields are visible (Field Permissions), and which object types are available. Think of it as the foundation — it defines the floor of what a user can do. Standard profiles include: <strong>Commercial Rep</strong>, <strong>Regional Manager</strong>, <strong>MSL</strong>, <strong>Medical Affairs Manager</strong>, <strong>CRM Administrator</strong>, and <strong>Read Only</strong>.</p>
+
+  <h3>Permission Sets (Additive Expansions)</h3>
+  <p>Permission Sets add capabilities on top of the Security Profile. A Commercial Rep might have the <em>Sample Management</em> Permission Set activated (enabling sample drop capabilities) and the <em>Approved Email</em> Permission Set activated. An MSL gets the <em>Medical Interactions</em> and <em>Publications Access</em> Permission Sets. A key account manager might additionally receive the <em>Payer Account Access</em> Permission Set.</p>
+  <p>The key architectural principle: Permission Sets can only <em>expand</em> what a Security Profile allows — they cannot override restrictions. If the Security Profile says a rep cannot delete Account records, no Permission Set can grant that ability. Deletion rights require a Security Profile change — a deliberate design to prevent privilege escalation through Permission Set assignment.</p>
+
+  <h3>Role Hierarchy &amp; Data Visibility</h3>
+  <p>Roles control which records a user can <em>see</em>. Vault uses an ownership-based model: a record is visible to the owner and everyone above them in the role hierarchy. A Territory Rep owns their Account records; their District Manager sees all Territory Reps' records; the Regional VP sees all District Managers' records. This is configured under Admin → Security → Roles. Cross-territory visibility (needed for KAM or home-office analytics) is handled through Sharing Rules — granting read or read/write access to records based on criteria (e.g., "all Accounts in IDN type are visible to the KAM team").</p>
+
+  <h3>The Medical–Commercial Firewall in Vault CRM</h3>
+  <p>In Vault CRM, the commercial–medical firewall is implemented through Object Type access within the Security Profile. Commercial Rep profiles have access to the <em>Commercial</em> object types only (Detail Call, Approved Email, Sample Transaction). MSL profiles have access to <em>Medical</em> object types only (Medical Interaction, Medical Inquiry, Scientific Exchange). The Account object is shared — both see the same HCP record — but the activity records below it are type-firewalled. This is cleaner and more auditable than the Salesforce implementation, where firewall enforcement relied on Profiles + Record Type visibility combinations that were notoriously complex to maintain.</p>
+
+  <!-- ═══════════════════════════════════
+       PROMOMATS INTEGRATION
+  ═══════════════════════════════════ -->
+  <h2 id="vcrm-promomats">Integration with Vault PromoMats</h2>
+
+  <p>The PromoMats integration is where Vault CRM's native platform advantage becomes most visible. Because Vault CRM and Vault PromoMats are both Vault applications, the integration is not an external API call — it is an <em>intra-vault reference</em>.</p>
+
+  <h3>How CLM Content Flows</h3>
+  <p>When a brand team uploads a new CLM presentation to PromoMats and routes it through the MLR review workflow, the approved content becomes available in Vault CRM automatically — no sync job, no content export, no IT ticket. The CLM Viewer in the rep's mobile app references the PromoMats document ID directly. When the rep launches CLM during a call, the approved slides are served in real time from PromoMats.</p>
+
+  <p>The consequence is immediate and powerful: when MLR approves a content update — a corrected efficacy claim, a label change, a competitor response slide — it appears in every rep's CLM deck within minutes. When MLR withdraws content — a safety update, a promotional piece taken out of circulation — it disappears from CRM immediately. There is no window where reps can accidentally use withdrawn content.</p>
+
+  <h3>Approved Email Template Synchronization</h3>
+  <p>Approved Email templates work the same way. An email template approved in PromoMats (with the mandatory ISI footer, the approved subject line, the compliant body text) is referenced by Vault CRM, not copied into it. The rep selects from a menu of active approved templates. Archived templates no longer appear. Templates requiring personalization (HCP name, product name, territory) use Vault's token system — approved variable slots within a fixed structure that cannot be altered by the rep.</p>
+
+  <h3>Engagement Data Flowing Back to PromoMats</h3>
+  <p>CLM engagement data — which slides were shown, for how long, with what key message reaction (positive, negative, neutral, none) — flows from CRM back to PromoMats analytics. Brand managers can see, at slide level, which parts of the CLM presentation are resonating and which are being skipped. A slide with consistently negative reactions triggers a content review cycle. This closed-loop feedback is the foundation of the brand's evidence-based promotional strategy.</p>
+
+  <!-- ═══════════════════════════════════
+       MEDCOMM INTEGRATION
+  ═══════════════════════════════════ -->
+  <h2 id="vcrm-medcomm">Integration with Vault MedComm (Medical)</h2>
+
+  <p>Vault MedComm is the medical affairs application within the Vault platform — covering scientific exchange, medical inquiry management, publication planning, and MSL field operations. Its integration with Vault CRM is governed by the commercial–medical firewall while enabling shared infrastructure where appropriate.</p>
+
+  <h3>Shared Account &amp; Contact Foundation</h3>
+  <p>Both Vault CRM (commercial) and Vault MedComm (medical) read from the same Account and Contact objects. When a commercial rep updates an HCP's phone number in CRM, the MSL sees the updated record in MedComm immediately — no sync delay, no duplicate records to reconcile. The master data layer is truly shared.</p>
+
+  <h3>Medical Inquiry Routing</h3>
+  <p>When a commercial rep receives an unsolicited medical question from an HCP during a call — for example, a question about off-label use — the rep cannot answer it directly (FDCA Sec. 502(n) constraints on off-label promotion). Instead, the rep flags the inquiry in the Call Report, triggering a Medical Information Request workflow in Vault MedComm. The medical information team receives the inquiry, prepares a compliant Standard Response Letter (a Vault MedComm document with its own MLR-cleared lifecycle), and sends it to the HCP — all within Vault, all audited. The rep receives a notification that the inquiry was handled.</p>
+
+  <h3>KOL Engagement Coordination</h3>
+  <p>KOL records exist in the Account object, visible to both commercial and medical. But the <em>type</em> of engagement is firewalled. Commercial engagement (detail calls, speaker bureau invitations) flows through Vault CRM. Medical engagement (advisory board participation, IIS grants, publication authorship) flows through Vault MedComm. The Vault platform prevents overlap: an MSL cannot see the commercial detail history; a rep cannot see the scientific exchange notes. But both can see whether the KOL has an upcoming congress attendance — enabling coordinated approach without crossing the firewall.</p>
+
+  <!-- ═══════════════════════════════════
+       NETWORK INTEGRATION
+  ═══════════════════════════════════ -->
+  <h2 id="vcrm-network">Integration with Veeva Network (MDM)</h2>
+
+  <p>Veeva Network is the master data management (MDM) layer — the authoritative source of HCP identity, credentials, affiliations, and contact information. In Vault CRM, the Network integration is a first-class, real-time connection.</p>
+
+  <h3>How Master Data Flows</h3>
+  <p>When an HCP record is created or updated in Network — new DEA registration, address change, specialty update, new hospital affiliation — the change propagates to Vault CRM accounts in real time. The CRM account record is a <em>subscriber</em> to the Network master. Local edits (territory-specific notes, call preferences, internal identifiers) are stored in CRM-only fields that do not flow back to Network. This unidirectional model keeps Network clean while allowing operational flexibility in CRM.</p>
+
+  <p>Network's <strong>DCR (Data Change Request)</strong> workflow lets CRM users flag errors in master data — wrong address, incorrect specialty, duplicate record — without being able to directly edit the master. DCRs go to the Network stewardship team for review and approval, maintaining data governance integrity.</p>
+
+  <h3>HCP Eligibility &amp; Compliance Checks</h3>
+  <p>Network maintains each HCP's <strong>license status</strong>, <strong>DEA registration</strong>, <strong>exclusion list</strong> status (OIG, GSA), and <strong>state-level sample eligibility</strong>. Vault CRM pulls these attributes at call time. Before a rep can create a sample transaction for an HCP, CRM automatically checks Network for current DEA registration and state license validity. If an HCP has been placed on the OIG exclusion list, the system blocks sample drops and flags the account for compliance review — without requiring the rep to manually check compliance databases.</p>
+
+  <!-- ═══════════════════════════════════
+       MIGRATION ROADMAP
+  ═══════════════════════════════════ -->
+  <h2 id="vcrm-migration">Migration Roadmap: Veeva CRM → Vault CRM</h2>
+
+  <p>Marcus closed his notebook at the end of the week with an eight-phase plan. Full-lifecycle migrations from legacy Veeva CRM (Salesforce-based) to next-generation Vault CRM require a structured, zero-data-loss methodology covering every dimension — from CRM audit and data extraction through configuration rebuild, integration re-mapping, global wave rollout, and post-go-live hypercare. One team, end-to-end ownership.</p>
+
+  <!-- Key outcome metrics -->
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 24px 0;">
+    <div style="flex:1;min-width:110px;background:#EBF0F8;border:1px solid #1B3A6B;border-radius:6px;padding:10px 12px;text-align:center;">
+      <div style="font-size:17px;font-weight:700;color:#1B3A6B;">Zero</div>
+      <div style="font-size:9.5px;color:#4A5568;margin-top:3px;">Data Loss</div>
+    </div>
+    <div style="flex:1;min-width:110px;background:#EBF0F8;border:1px solid #0B6B6B;border-radius:6px;padding:10px 12px;text-align:center;">
+      <div style="font-size:17px;font-weight:700;color:#0B6B6B;">30%</div>
+      <div style="font-size:9.5px;color:#4A5568;margin-top:3px;">Faster Go-Live</div>
+    </div>
+    <div style="flex:1;min-width:110px;background:#EBF0F8;border:1px solid #0B6B6B;border-radius:6px;padding:10px 12px;text-align:center;">
+      <div style="font-size:17px;font-weight:700;color:#0B6B6B;">95%+</div>
+      <div style="font-size:9.5px;color:#4A5568;margin-top:3px;">Rep Adoption</div>
+    </div>
+    <div style="flex:1;min-width:110px;background:#EBF0F8;border:1px solid #4A2080;border-radius:6px;padding:10px 12px;text-align:center;">
+      <div style="font-size:17px;font-weight:700;color:#4A2080;">40%</div>
+      <div style="font-size:9.5px;color:#4A5568;margin-top:3px;">Lower Risk</div>
+    </div>
+    <div style="flex:1;min-width:110px;background:#1A1030;border:1px solid #4A2080;border-radius:6px;padding:10px 12px;text-align:center;">
+      <div style="font-size:13px;font-weight:700;color:#C0A0FF;">AI Accel.</div>
+      <div style="font-size:9.5px;color:#9060D0;margin-top:3px;">Migration Accelerators</div>
+    </div>
+  </div>
+
+  <!-- 8-Phase SVG -->
+  <figure class="vis-embed" aria-label="8-Phase Migration Methodology">
+    <div class="vis-label"><span class="vis-icon">◈</span> 8-Phase Migration Methodology — Veeva CRM to Vault CRM</div>
+    <div class="vis-inner" style="padding:20px;">
+      <svg viewBox="0 0 960 230" xmlns="http://www.w3.org/2000/svg" style="font-family:Inter,sans-serif;min-width:700px;display:block;">
+        <defs>
+          <marker id="migArr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L6,3 z" fill="#DCECf8"/>
+          </marker>
+        </defs>
+        <rect width="960" height="230" fill="#F8FAFC"/>
+
+        <!-- Band headers -->
+        <rect x="0"   y="0" width="240" height="20" fill="#EBF0F8"/>
+        <text x="120" y="14" text-anchor="middle" fill="#1B3A6B" font-size="8" font-weight="700" letter-spacing="1.2">DISCOVERY &amp; DATA</text>
+        <rect x="240" y="0" width="240" height="20" fill="#E0F7F7"/>
+        <text x="360" y="14" text-anchor="middle" fill="#0B6060" font-size="8" font-weight="700" letter-spacing="1.2">CONFIGURATION &amp; REPORTING</text>
+        <rect x="480" y="0" width="240" height="20" fill="#EAF6F6"/>
+        <text x="600" y="14" text-anchor="middle" fill="#2D3D6B" font-size="8" font-weight="700" letter-spacing="1.2">INTEGRATION &amp; ROLLOUT</text>
+        <rect x="720" y="0" width="240" height="20" fill="#EAF6F6"/>
+        <text x="840" y="14" text-anchor="middle" fill="#9A6412" font-size="8" font-weight="700" letter-spacing="1.2">CHANGE &amp; ADOPTION</text>
+        <line x1="240" y1="0" x2="240" y2="230" stroke="#E2E8F0" stroke-width="1"/>
+        <line x1="480" y1="0" x2="480" y2="230" stroke="#E2E8F0" stroke-width="1"/>
+        <line x1="720" y1="0" x2="720" y2="230" stroke="#E2E8F0" stroke-width="1"/>
+
+        <!-- Phase 1 -->
+        <rect x="6" y="26" width="110" height="82" rx="6" fill="#EBF0F8" stroke="#80C8C8" stroke-width="1.5"/>
+        <circle cx="18" cy="26" r="10" fill="#DCECf8"/>
+        <text x="18" y="30" text-anchor="middle" fill="#0A3D62" font-size="8.5" font-weight="700">1</text>
+        <text x="61" y="47" text-anchor="middle" fill="#1B3A6B" font-size="9.5" font-weight="700">Strategy &amp;</text>
+        <text x="61" y="60" text-anchor="middle" fill="#1B3A6B" font-size="9.5" font-weight="700">Planning</text>
+        <text x="61" y="77" text-anchor="middle" fill="#4A5568" font-size="7.5">Discovery workshops</text>
+        <text x="61" y="89" text-anchor="middle" fill="#4A5568" font-size="7.5">CRM audit · Inventory</text>
+        <line x1="116" y1="67" x2="123" y2="67" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#migArr)"/>
+
+        <!-- Phase 2 -->
+        <rect x="124" y="26" width="110" height="82" rx="6" fill="#EBF0F8" stroke="#80C8C8" stroke-width="1.5"/>
+        <circle cx="136" cy="26" r="10" fill="#DCECf8"/>
+        <text x="136" y="30" text-anchor="middle" fill="#0A3D62" font-size="8.5" font-weight="700">2</text>
+        <text x="179" y="47" text-anchor="middle" fill="#1B3A6B" font-size="9.5" font-weight="700">Data</text>
+        <text x="179" y="60" text-anchor="middle" fill="#1B3A6B" font-size="9.5" font-weight="700">Migration</text>
+        <text x="179" y="77" text-anchor="middle" fill="#4A5568" font-size="7.5">Extraction · Cleansing</text>
+        <text x="179" y="89" text-anchor="middle" fill="#4A5568" font-size="7.5">Transform · Validated load</text>
+        <line x1="234" y1="67" x2="248" y2="67" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#migArr)"/>
+
+        <!-- Phase 3 -->
+        <rect x="248" y="26" width="110" height="82" rx="6" fill="#E0F7F7" stroke="#99E6E6" stroke-width="1.5"/>
+        <circle cx="260" cy="26" r="10" fill="#D0EEEE"/>
+        <text x="260" y="30" text-anchor="middle" fill="#0A5555" font-size="8.5" font-weight="700">3</text>
+        <text x="303" y="47" text-anchor="middle" fill="#0B6060" font-size="9.5" font-weight="700">Configuration</text>
+        <text x="303" y="60" text-anchor="middle" fill="#0B6060" font-size="9.5" font-weight="700">Transfer</text>
+        <text x="303" y="77" text-anchor="middle" fill="#4A5568" font-size="7.5">Rules · Workflows</text>
+        <text x="303" y="89" text-anchor="middle" fill="#4A5568" font-size="7.5">Admin configs in Vault</text>
+        <line x1="358" y1="67" x2="364" y2="67" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#migArr)"/>
+
+        <!-- Phase 4 -->
+        <rect x="364" y="26" width="110" height="82" rx="6" fill="#E0F7F7" stroke="#99E6E6" stroke-width="1.5"/>
+        <circle cx="376" cy="26" r="10" fill="#D0EEEE"/>
+        <text x="376" y="30" text-anchor="middle" fill="#0A5555" font-size="8.5" font-weight="700">4</text>
+        <text x="419" y="47" text-anchor="middle" fill="#0B6060" font-size="9.5" font-weight="700">Reports &amp;</text>
+        <text x="419" y="60" text-anchor="middle" fill="#0B6060" font-size="9.5" font-weight="700">Analytics</text>
+        <text x="419" y="77" text-anchor="middle" fill="#4A5568" font-size="7.5">Dashboards · Call reports</text>
+        <text x="419" y="89" text-anchor="middle" fill="#4A5568" font-size="7.5">Territory analytics rebuilt</text>
+        <line x1="474" y1="67" x2="488" y2="67" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#migArr)"/>
+
+        <!-- Phase 5 -->
+        <rect x="488" y="26" width="110" height="82" rx="6" fill="#EAF6F6" stroke="#80C8C8" stroke-width="1.5"/>
+        <circle cx="500" cy="26" r="10" fill="#E0E8F5"/>
+        <text x="500" y="30" text-anchor="middle" fill="#2D3D6B" font-size="8.5" font-weight="700">5</text>
+        <text x="543" y="47" text-anchor="middle" fill="#2D3D6B" font-size="9.5" font-weight="700">Systems</text>
+        <text x="543" y="60" text-anchor="middle" fill="#2D3D6B" font-size="9.5" font-weight="700">Integration</text>
+        <text x="543" y="77" text-anchor="middle" fill="#9060D0" font-size="7.5">ERP · MDM · Data Cloud</text>
+        <text x="543" y="89" text-anchor="middle" fill="#9060D0" font-size="7.5">PromoMats re-mapping</text>
+        <line x1="598" y1="67" x2="604" y2="67" stroke="#9060D0" stroke-width="1.5" marker-end="url(#migArr)"/>
+
+        <!-- Phase 6 -->
+        <rect x="604" y="26" width="110" height="82" rx="6" fill="#EAF6F6" stroke="#80C8C8" stroke-width="1.5"/>
+        <circle cx="616" cy="26" r="10" fill="#E0E8F5"/>
+        <text x="616" y="30" text-anchor="middle" fill="#2D3D6B" font-size="8.5" font-weight="700">6</text>
+        <text x="659" y="47" text-anchor="middle" fill="#2D3D6B" font-size="9.5" font-weight="700">Global</text>
+        <text x="659" y="60" text-anchor="middle" fill="#2D3D6B" font-size="9.5" font-weight="700">Rollouts</text>
+        <text x="659" y="77" text-anchor="middle" fill="#9060D0" font-size="7.5">Country wave rollout</text>
+        <text x="659" y="89" text-anchor="middle" fill="#9060D0" font-size="7.5">Localisation · Regulatory</text>
+        <line x1="714" y1="67" x2="728" y2="67" stroke="#9060D0" stroke-width="1.5" marker-end="url(#migArr)"/>
+
+        <!-- Phase 7 -->
+        <rect x="728" y="26" width="110" height="82" rx="6" fill="#EAF6F6" stroke="#80C8C8" stroke-width="1.5"/>
+        <circle cx="740" cy="26" r="10" fill="#FFF0E8"/>
+        <text x="740" y="30" text-anchor="middle" fill="#9A6412" font-size="8.5" font-weight="700">7</text>
+        <text x="783" y="47" text-anchor="middle" fill="#9A6412" font-size="9.5" font-weight="700">Business</text>
+        <text x="783" y="60" text-anchor="middle" fill="#9A6412" font-size="9.5" font-weight="700">Process Svcs</text>
+        <text x="783" y="77" text-anchor="middle" fill="#7A4020" font-size="7.5">SOP redesign · Re-eng.</text>
+        <text x="783" y="89" text-anchor="middle" fill="#7A4020" font-size="7.5">Change management</text>
+        <line x1="838" y1="67" x2="844" y2="67" stroke="#FFA657" stroke-width="1.5" marker-end="url(#migArr)"/>
+
+        <!-- Phase 8 -->
+        <rect x="844" y="26" width="110" height="82" rx="6" fill="#EAF6F6" stroke="#80C8C8" stroke-width="1.5"/>
+        <circle cx="856" cy="26" r="10" fill="#FFF0E8"/>
+        <text x="856" y="30" text-anchor="middle" fill="#9A6412" font-size="8.5" font-weight="700">8</text>
+        <text x="899" y="47" text-anchor="middle" fill="#9A6412" font-size="9.5" font-weight="700">User</text>
+        <text x="899" y="60" text-anchor="middle" fill="#9A6412" font-size="9.5" font-weight="700">Onboarding</text>
+        <text x="899" y="77" text-anchor="middle" fill="#7A4020" font-size="7.5">Role-based training</text>
+        <text x="899" y="89" text-anchor="middle" fill="#7A4020" font-size="7.5">Mobile · Hypercare</text>
+
+        <!-- Delivery row label -->
+        <rect x="0" y="120" width="960" height="14" fill="#F8FAFC"/>
+        <text x="480" y="131" text-anchor="middle" fill="#4A5568" font-size="7.5" font-weight="600" letter-spacing="1.2">WHAT GETS DELIVERED</text>
+
+        <!-- Delivery card 1 -->
+        <rect x="6" y="138" width="152" height="56" rx="5" fill="#EBF0F8" stroke="#80C8C8" stroke-width="1"/>
+        <text x="82" y="153" text-anchor="middle" fill="#1B3A6B" font-size="8.5" font-weight="700">Migration Assessment</text>
+        <text x="82" y="166" text-anchor="middle" fill="#4A5568" font-size="7.5">CRM audit · Data quality scoring</text>
+        <text x="82" y="178" text-anchor="middle" fill="#4A5568" font-size="7.5">Integration mapping</text>
+
+        <!-- Delivery card 2 -->
+        <rect x="164" y="138" width="152" height="56" rx="5" fill="#EBF0F8" stroke="#80C8C8" stroke-width="1"/>
+        <text x="240" y="153" text-anchor="middle" fill="#1B3A6B" font-size="8.5" font-weight="700">Data Extract &amp; Transform</text>
+        <text x="240" y="166" text-anchor="middle" fill="#4A5568" font-size="7.5">Full extraction · Deduplication</text>
+        <text x="240" y="178" text-anchor="middle" fill="#4A5568" font-size="7.5">Enrichment · Rollback controls</text>
+
+        <!-- Delivery card 3 -->
+        <rect x="322" y="138" width="152" height="56" rx="5" fill="#E0F7F7" stroke="#99E6E6" stroke-width="1"/>
+        <text x="398" y="153" text-anchor="middle" fill="#0B6060" font-size="8.5" font-weight="700">Config &amp; Custom Build</text>
+        <text x="398" y="166" text-anchor="middle" fill="#4A5568" font-size="7.5">Object &amp; field config</text>
+        <text x="398" y="178" text-anchor="middle" fill="#4A5568" font-size="7.5">Workflow · Territory setup</text>
+
+        <!-- Delivery card 4 -->
+        <rect x="480" y="138" width="152" height="56" rx="5" fill="#EAF6F6" stroke="#80C8C8" stroke-width="1"/>
+        <text x="556" y="153" text-anchor="middle" fill="#2D3D6B" font-size="8.5" font-weight="700">Integration Architecture</text>
+        <text x="556" y="166" text-anchor="middle" fill="#9060D0" font-size="7.5">Vault API · Commercial Data Cloud</text>
+        <text x="556" y="178" text-anchor="middle" fill="#9060D0" font-size="7.5">ERP &amp; third-party connectors</text>
+
+        <!-- Delivery card 5 -->
+        <rect x="638" y="138" width="152" height="56" rx="5" fill="#EAF6F6" stroke="#80C8C8" stroke-width="1"/>
+        <text x="714" y="153" text-anchor="middle" fill="#9A6412" font-size="8.5" font-weight="700">Training &amp; Change Mgmt</text>
+        <text x="714" y="166" text-anchor="middle" fill="#7A4020" font-size="7.5">Rep &amp; manager training</text>
+        <text x="714" y="178" text-anchor="middle" fill="#7A4020" font-size="7.5">Mobile enablement · Adoption</text>
+
+        <!-- Delivery card 6 -->
+        <rect x="796" y="138" width="158" height="56" rx="5" fill="#EAF6F6" stroke="#80C8C8" stroke-width="1"/>
+        <text x="875" y="153" text-anchor="middle" fill="#9A6412" font-size="8.5" font-weight="700">Hypercare &amp; Stabilisation</text>
+        <text x="875" y="166" text-anchor="middle" fill="#7A4020" font-size="7.5">Dedicated hypercare team</text>
+        <text x="875" y="178" text-anchor="middle" fill="#7A4020" font-size="7.5">24/7 monitoring · Performance</text>
+      </svg>
+    </div>
+    <figcaption class="vis-cap">8-phase migration methodology — from CRM audit and data extraction through go-live hypercare and stabilisation</figcaption>
+  </figure>
+
+  <h3>Phase 1 — Strategy &amp; Planning</h3>
+  <p>Discovery workshops establish the migration scope, business objectives, risk register, and timeline. A current-state CRM audit inventories every custom object, field, workflow rule, integration point, and Apex trigger in legacy Veeva CRM. The data inventory classifies all record types by volume and retention requirement — call reports, sample transactions, event records, consent records, and HCP account data — and scores each dataset for quality, completeness, and deduplication need. The output is a signed-off migration charter: what moves, what gets rebuilt natively in Vault, and what gets decommissioned.</p>
+
+  <h3>Phase 2 — Data Migration</h3>
+  <p>Full data extraction from Salesforce-based Veeva CRM uses either the Salesforce Data Loader or Veeva OpenData API depending on data type. All extracted records go through a cleansing and transformation pipeline: deduplication of HCP accounts against the Network MDM master, field-level mapping from Salesforce schema to Vault object schema (`_vod__c` → `__v`), and lookback-period scoping (typically 3–7 years per compliance requirements). Every transformed dataset is loaded into the Vault sandbox with a validated load protocol — row counts reconciled, sample transaction receipts verified, and a rollback safety checkpoint cleared before any production load. <strong>Zero data loss</strong> is enforced through automated reconciliation at each stage.</p>
+
+  <h3>Phase 3 — Configuration Transfer</h3>
+  <p>Business rules, workflows, and admin configurations are rebuilt natively in Vault CRM — not migrated. Salesforce constructs (Apex triggers, Process Builder flows, Visualforce pages) have no direct migration path; each must be re-implemented using Vault SDK, Lifecycle Entry Actions, and the Vault Page Layout Engine. This phase rebuilds Object Types and Field Permission Sets, lifecycle stage workflows for call reports and medical inquiries, PDMA-compliant sample management rules, territory and cycle plan structures, and the MLR content workflow linking PromoMats to the CLM content library. All configurations are validated in Vault UAT before promotion to production.</p>
+
+  <h3>Phase 4 — Reports &amp; Analytics</h3>
+  <p>Every dashboard, call report, SFE metric, and territory analytics view is rebuilt in Vault CRM's reporting layer and in Veeva Commercial Data Cloud. This includes rep-level call rate and reach/frequency dashboards, manager territory rollup views, sample utilisation and PDMA reconciliation reports, CLM content engagement heatmaps, and the Next Best Action scoring feeds. Validated output is compared numerically against the equivalent legacy Veeva CRM reports on the same data period to confirm equivalence before cutover sign-off.</p>
+
+  <h3>Phase 5 — Systems Integration</h3>
+  <p>All inbound and outbound integration touchpoints are re-mapped for Vault CRM's API-first architecture. Key integrations rebuilt in this phase: Network MDM ↔ Vault Account sync (real-time HCP/HCO master data), PromoMats ↔ Vault CRM CLM content pipeline, Commercial Data Cloud territory and alignment sync, ERP-to-sample-inventory feed, IQVIA/prescription data ingest, and any third-party data connectors (patient hub, specialty pharmacy, market data). All integrations are validated end-to-end in staging with automated regression tests before production cutover.</p>
+
+  <h3>Phase 6 — Global Rollouts</h3>
+  <p>Large pharmaceutical organisations execute country-by-country wave rollouts rather than a single global cutover. Waves are sequenced by market complexity, data volume, and regulatory requirements. Each country wave includes localisation (language, regulatory field requirements, local consent laws — GDPR, PDPA, country-specific HCP data rules), local training, and a country-specific hypercare window. Wave sequencing typically runs US first (highest volume, most complex configuration), followed by European markets, then emerging markets. A global control tower monitors all wave status in real time and maintains a single escalation path.</p>
+
+  <h3>Phase 7 — Business Process Services</h3>
+  <p>Migration is also an opportunity to re-engineer commercial and medical workflows rather than simply replicate legacy processes. SOPs for call reporting, sample management, Approved Email cadence, MSL insight capture, and event management are updated to leverage Vault CRM's native capabilities — Veeva AI pre-call intelligence, Next Best Action, and automated compliance checks. Change management communications, field leadership briefings, and a Center of Excellence (CoE) governance model are established to own ongoing configuration and change request management post-go-live.</p>
+
+  <h3>Phase 8 — User Onboarding &amp; Hypercare</h3>
+  <p>Role-based training covers commercial reps (call reporting, CLM, sample management, Approved Email), MSLs (scientific exchange workflow, insight capture, Medical Inquiry), managers (territory dashboards, cycle plan management), and admins (user management, permission sets, integration monitoring). Mobile app enablement is executed device-by-device for the full field force with offline sync validation. Post-go-live, a dedicated hypercare team provides 24/7 issue monitoring, same-day configuration fixes, and a structured 30/60/90-day stabilisation review. Adoption is measured weekly — CRM usage rates, call submission compliance, sample reconciliation rates — and reported to commercial leadership with an explicit adoption gate before hypercare stand-down.</p>
+
+  <p style="margin-top:28px;padding:16px 20px;background:#EAF6F6;border-left:4px solid #0D8B8B;border-radius:0 8px 8px 0;font-style:italic;color:#0A3D62;">Marcus signed off on the eight-phase migration plan at the end of Month 1. Phase 1 had already surfaced three integration gaps no one had documented and a data quality issue in 14% of HCP records that would have caused silent failures in the Network sync. The validated load protocol in Phase 2 would catch any remaining issues before a single rep touched the new system. By Month 13, NovaTerra's 800 commercial reps and 120 MSLs would be on a single Vault platform — zero data loss, one vendor, one support contract, one validation package, one version of truth. The system built in the age of on-premise Salesforce infrastructure had given way to something purpose-built for the age of life sciences AI.</p>
+
+  <div class="ch-nav-footer"><a class="ch-nav-link prev" href="#ch12"><span class="ch-nav-arrow">←</span><span class="ch-nav-text">Ch 12 · Veeva Systems</span></a><div class="ch-nav-dot">◈</div><a class="ch-nav-link next" href="#ch14"><span class="ch-nav-text">Ch 14 · Strategy</span><span class="ch-nav-arrow">→</span></a></div>
+</div>
+
+<div class="ch-divider ch-both"></div>
+<div class="chapter" id="ch14">
+
+  <div class="ch-running">Chapter Fourteen · Part IX &#8212; Strategy</div>
+  <div class="ch-decorator">
+    <div class="ch-big-num">14</div>
+    <div class="ch-heading-block">
+      <div class="ch-label">
+        <span class="ch-pill" style="background:#0D8B8B;">Ch 14</span>
+        <span style="color:#0D8B8B;">Chapter Fourteen</span>
       </div>
       <h1>Strategy &#8212; How Decisions Get Made</h1>
     </div>
@@ -9946,7 +11050,7 @@ mark { background: var(--highlight); border-radius: 2px; color: inherit; }
 
   <p>Strategy, as Sarah had always said, is not a destination. It is the question you never stop asking.</p>
 
-  <div class="ch-nav-footer"><a class="ch-nav-link prev" href="#ch12"><span class="ch-nav-arrow">←</span><span class="ch-nav-text">Ch 12 · Veeva Systems</span></a><div class="ch-nav-dot">◈</div><a class="ch-nav-link next" href="#glossary"><span class="ch-nav-text">A–Z Glossary</span><span class="ch-nav-arrow">→</span></a></div>
+  <div class="ch-nav-footer"><a class="ch-nav-link prev" href="#ch-vault-crm"><span class="ch-nav-arrow">←</span><span class="ch-nav-text">Ch 13 · Vault CRM</span></a><div class="ch-nav-dot">◈</div><a class="ch-nav-link next" href="#glossary"><span class="ch-nav-text">A–Z Glossary</span><span class="ch-nav-arrow">→</span></a></div>
 </div>
 
 <!-- ══════════════ GLOSSARY ══════════════ -->
@@ -9981,7 +11085,7 @@ mark { background: var(--highlight); border-radius: 2px; color: inherit; }
     <dt id="g-gxp">GxP — Good Practice Guidelines</dt>
     <dd>Umbrella for FDA/ICH quality frameworks: <strong>GMP</strong> (manufacturing, 21 CFR 210/211), <strong>GCP</strong> (clinical trials, ICH E6), <strong>GLP</strong> (laboratory studies, 21 CFR 58), <strong>GDP</strong> (distribution/cold chain), <strong>GVP</strong> (pharmacovigilance), <strong>GAMP 5</strong> (computerized systems — Veeva = Category 4). All ensure quality, data integrity, and patient safety throughout the drug lifecycle.</dd>
     <dt id="g-heor">HEOR — Health Economics &amp; Outcomes Research</dt>
-    <dd>Research generating evidence of a medicine’s economic and real-world value. Key outputs: Cost-effectiveness analysis (cost per QALY), Budget Impact Model, AMCP Dossier, PROs (patient-reported outcomes). <strong>RWE/RWD</strong>: Real-World Evidence from claims data, EHR, registries — increasingly used post-approval for payer negotiations and label expansions.</dd>
+    <dd>Research generating evidence of a medicine's economic and real-world value. Key outputs: Cost-effectiveness analysis (cost per QALY), Budget Impact Model, AMCP Dossier, PROs (patient-reported outcomes). <strong>RWE/RWD</strong>: Real-World Evidence from claims data, EHR, registries — increasingly used post-approval for payer negotiations and label expansions.</dd>
     <dt id="g-hcp">HCP / HCO</dt>
     <dd><strong>HCP (Healthcare Professional)</strong>: Any licensed prescriber or recommender — physicians, NPs, PAs, pharmacists. Primary targets of commercial and medical engagement. <strong>HCO (Healthcare Organization)</strong>: Hospitals, clinics, group practices, IDNs. Managed through Key Account Management (KAM) teams.</dd>
     <dt id="g-ind">IND / NDA / BLA / ANDA</dt>
@@ -10011,7 +11115,7 @@ mark { background: var(--highlight); border-radius: 2px; color: inherit; }
     <dd>The average price manufacturers receive from wholesalers and retail pharmacies for drugs distributed in the US, net of chargebacks, cash discounts, and certain fees. Reported quarterly to CMS. AMP is the basis for: Medicaid base rebate calculation, 340B ceiling price (AMP × 23.1% discount), and the Federal Supply Schedule Non-FAMP calculation. <em>→ See: Model N, Government Pricing (Ch 5)</em></dd>
 
     <dt id="g-anaplan">Anaplan</dt>
-    <dd>Cloud-based connected planning platform used by pharmaceutical market access, finance, and commercial teams. Anaplan’s in-memory calculation engine enables real-time scenario modelling across gross-to-net planning, formulary contracting strategy, brand revenue forecasting, LOE planning, and quota setting. <em>→ See: Market Access (Ch 5), Model N</em></dd>
+    <dd>Cloud-based connected planning platform used by pharmaceutical market access, finance, and commercial teams. Anaplan's in-memory calculation engine enables real-time scenario modelling across gross-to-net planning, formulary contracting strategy, brand revenue forecasting, LOE planning, and quota setting. <em>→ See: Market Access (Ch 5), Model N</em></dd>
 
     <dt id="g-best-price">Best Price</dt>
     <dd>The lowest price a manufacturer charges any US customer in any pricing arrangement. Manufacturers report Best Price quarterly to CMS as part of the MDRP. The Medicaid base rebate equals the greater of 23.1% of AMP or the AMP–Best Price difference. <em>→ See: Model N, AMP, MDRP (Ch 5)</em></dd>
@@ -10023,13 +11127,13 @@ mark { background: var(--highlight); border-radius: 2px; color: inherit; }
     <dd>The globally harmonised five-module format for regulatory submissions (NDA, BLA, MAA) developed under ICH M4. The eCTD is the required electronic submission format for FDA, using a structured XML backbone enabling lifecycle management of submission sequences. A typical NDA runs 100,000–300,000 pages equivalent. <em>→ See: NDA, Veeva RIM, R&amp;D Regulatory (Ch 2)</em></dd>
 
     <dt id="g-etmf">eTMF — Electronic Trial Master File</dt>
-    <dd>The electronic system managing the Trial Master File — the collection of essential documents that permits evaluation of a clinical trial’s conduct and data quality, as defined by ICH E6(R2). Veeva Vault eTMF uses the DIA TMF Reference Model to define expected documents, track completeness in real time, and generate inspection-ready dossiers. <em>→ See: TMF, Veeva RIM, R&amp;D Regulatory (Ch 2)</em></dd>
+    <dd>The electronic system managing the Trial Master File — the collection of essential documents that permits evaluation of a clinical trial's conduct and data quality, as defined by ICH E6(R2). Veeva Vault eTMF uses the DIA TMF Reference Model to define expected documents, track completeness in real time, and generate inspection-ready dossiers. <em>→ See: TMF, Veeva RIM, R&amp;D Regulatory (Ch 2)</em></dd>
 
     <dt id="g-formulary-tier">Formulary / Formulary Tier</dt>
     <dd>The list of drugs covered by a health plan and their cost-sharing tier: <strong>Tier 1</strong> (generic, lowest co-pay), <strong>Tier 2</strong> (preferred brand), <strong>Tier 3</strong> (non-preferred brand), <strong>Tier 4</strong> (specialty, highest co-insurance). Preferred tier placement (Tier 2 vs. Tier 3) can drive 3–5× prescription volume differences. <em>→ See: PBM, Market Access (Ch 5)</em></dd>
 
     <dt id="g-gtm">Gross-to-Net (GTN) Waterfall</dt>
-    <dd>The reconciliation between a drug’s WAC (list price) and the net revenue actually realised per unit after all contractual deductions. Major waterfall components: managed care rebates (30–60%+ of WAC for competitive categories), Medicaid statutory rebates, 340B discounts, chargebacks, patient co-pay assistance, distribution fees. GTN ratios have increased from ~15% in 2005 to 40–60%+ for many branded drugs by 2025. <em>→ See: WAC, Rebate, Model N (Ch 5)</em></dd>
+    <dd>The reconciliation between a drug's WAC (list price) and the net revenue actually realised per unit after all contractual deductions. Major waterfall components: managed care rebates (30–60%+ of WAC for competitive categories), Medicaid statutory rebates, 340B discounts, chargebacks, patient co-pay assistance, distribution fees. GTN ratios have increased from ~15% in 2005 to 40–60%+ for many branded drugs by 2025. <em>→ See: WAC, Rebate, Model N (Ch 5)</em></dd>
 
     <dt id="g-icer">ICER — Incremental Cost-Effectiveness Ratio</dt>
     <dd>The additional cost per Quality-Adjusted Life Year (QALY) gained by a new therapy versus the current standard of care. Published by ICER (Institute for Clinical and Economic Review), whose independent assessments directly influence PBM formulary negotiations. Commonly cited US willingness-to-pay threshold: $100,000–$150,000 per QALY. <em>→ See: QALY, BIM, HEOR (Ch 5)</em></dd>
@@ -10038,7 +11142,7 @@ mark { background: var(--highlight); border-radius: 2px; color: inherit; }
     <dd>Landmark US legislation with three major pharmaceutical pricing provisions: (1) Medicare Drug Price Negotiation — CMS can directly negotiate prices for high-expenditure small-molecule drugs (after 9 years) and biologics (after 13 years); first negotiated prices effective 2026. (2) Inflation Rebate Penalty — manufacturers must pay rebates to CMS if drug prices increase faster than CPI-U. (3) Part D Redesign — $2,000 OOP maximum for Medicare beneficiaries in 2025. <em>→ See: Medicare, WAC, Market Access (Ch 5)</em></dd>
 
     <dt id="g-loe">LOE — Loss of Exclusivity</dt>
-    <dd>The point at which a branded drug’s patent protection and/or regulatory exclusivity expires, enabling generic or biosimilar market entry. Brands typically lose 80–90% of volume within 12 months of first generic entry as PBMs switch formulary coverage. LOE planning encompasses: authorised generic strategy, patient assistance wind-down, contracting transition, and lifecycle management. <em>→ See: Anaplan, Market Access (Ch 5)</em></dd>
+    <dd>The point at which a branded drug's patent protection and/or regulatory exclusivity expires, enabling generic or biosimilar market entry. Brands typically lose 80–90% of volume within 12 months of first generic entry as PBMs switch formulary coverage. LOE planning encompasses: authorised generic strategy, patient assistance wind-down, contracting transition, and lifecycle management. <em>→ See: Anaplan, Market Access (Ch 5)</em></dd>
 
     <dt id="g-mdrp">MDRP — Medicaid Drug Rebate Programme</dt>
     <dd>The federal programme requiring pharmaceutical manufacturers to pay rebates to state Medicaid programmes in exchange for Medicaid coverage of their drugs. The federal base rebate is the greater of 23.1% of AMP or the AMP–Best Price difference. Quarterly CMS reporting of AMP and Best Price is the operational backbone of MDRP compliance, managed through Model N. <em>→ See: AMP, Best Price, Model N (Ch 5)</em></dd>
@@ -10047,19 +11151,19 @@ mark { background: var(--highlight); border-radius: 2px; color: inherit; }
     <dd>Enterprise revenue management platform purpose-built for pharmaceutical government pricing compliance, contract management, and rebate administration. Core modules: Government Pricing (automated AMP, Best Price, Non-FAMP, ASP calculation and CMS submission), Contract Management (chargeback processing), Rebate Management, 340B Programme Management, and Gross-to-Net Analytics. Model N creates an audit-ready, 21 CFR Part 11-compliant record of all government pricing calculations. <em>→ See: AMP, Best Price, Chargeback, 340B (Ch 5)</em></dd>
 
     <dt id="g-qaly">QALY — Quality-Adjusted Life Year</dt>
-    <dd>A measure of disease burden combining quantity and quality of life. One QALY = one year of perfect health. QALYs are the standard unit in cost-effectiveness analysis — the ICER (cost per QALY gained) is the primary metric payers and HTA bodies use to evaluate whether a drug’s price is justified by its clinical benefit. Widely used by UK’s NICE, EU HTA bodies, and increasingly by US private payers. <em>→ See: ICER, BIM, HEOR (Ch 5)</em></dd>
+    <dd>A measure of disease burden combining quantity and quality of life. One QALY = one year of perfect health. QALYs are the standard unit in cost-effectiveness analysis — the ICER (cost per QALY gained) is the primary metric payers and HTA bodies use to evaluate whether a drug's price is justified by its clinical benefit. Widely used by UK's NICE, EU HTA bodies, and increasingly by US private payers. <em>→ See: ICER, BIM, HEOR (Ch 5)</em></dd>
 
     <dt id="g-rebate">Rebate</dt>
     <dd>A retrospective discount paid by a manufacturer to a PBM, health plan, or government programme based on formulary placement, utilisation performance, or statutory obligation. Commercial managed care rebates secure preferred formulary tier access and are the primary driver of gross-to-net deductions. Medicaid rebates are statutory under the MDRP. <em>→ See: Gross-to-Net, MDRP, Model N (Ch 5)</em></dd>
 
     <dt id="g-veeva-rim">RIM — Veeva Vault RIM</dt>
-    <dd>Veeva’s regulatory information management platform managing the complete regulatory record: NDA/BLA/MAA submissions (eCTD authoring, publishing, ESG delivery), global registration database, health authority correspondence, labelling lifecycle, and regulatory commitment tracking. RIM integrates with Vault eTMF and Vault PromoMats. <em>→ See: eTMF, CTD, R&amp;D Regulatory (Ch 2)</em></dd>
+    <dd>Veeva's regulatory information management platform managing the complete regulatory record: NDA/BLA/MAA submissions (eCTD authoring, publishing, ESG delivery), global registration database, health authority correspondence, labelling lifecycle, and regulatory commitment tracking. RIM integrates with Vault eTMF and Vault PromoMats. <em>→ See: eTMF, CTD, R&amp;D Regulatory (Ch 2)</em></dd>
 
     <dt id="g-susar">SUSAR — Suspected Unexpected Serious Adverse Reaction</dt>
-    <dd>A serious adverse reaction that is both unexpected (not described in the current Investigator’s Brochure) and reasonably suspected to be causally related to an investigational drug. Fatal or life-threatening SUSARs must be reported to FDA within 7 calendar days; all other SUSARs within 15 calendar days. <em>→ See: DSUR, IND, R&amp;D Regulatory (Ch 2)</em></dd>
+    <dd>A serious adverse reaction that is both unexpected (not described in the current Investigator's Brochure) and reasonably suspected to be causally related to an investigational drug. Fatal or life-threatening SUSARs must be reported to FDA within 7 calendar days; all other SUSARs within 15 calendar days. <em>→ See: DSUR, IND, R&amp;D Regulatory (Ch 2)</em></dd>
 
     <dt id="g-wac">WAC — Wholesale Acquisition Cost</dt>
-    <dd>The manufacturer’s published list price to wholesalers — the anchor price for all downstream pharmaceutical pricing calculations. No major payer pays WAC; every channel receives discounts or rebates below list. Post-IRA 2022, WAC increases for Medicare drugs exceeding CPI-U trigger mandatory inflation rebates to CMS. <em>→ See: Gross-to-Net, Rebate, AMP, Market Access (Ch 5)</em></dd>
+    <dd>The manufacturer's published list price to wholesalers — the anchor price for all downstream pharmaceutical pricing calculations. No major payer pays WAC; every channel receives discounts or rebates below list. Post-IRA 2022, WAC increases for Medicare drugs exceeding CPI-U trigger mandatory inflation rebates to CMS. <em>→ See: Gross-to-Net, Rebate, AMP, Market Access (Ch 5)</em></dd>
 
     <dt id="g-340b">340B Drug Pricing Programme</dt>
     <dd>Federal programme requiring manufacturers to sell drugs to covered entities (safety-net hospitals, Federally Qualified Health Centres, Ryan White HIV/AIDS clinics) at ceiling prices of approximately 23.1% of AMP. 340B has grown from ~$1B in 2010 to ~$54B in 2023 in drug purchases, making it one of the most consequential and contested programmes in pharmaceutical policy. <em>→ See: AMP, Best Price, Model N (Ch 5)</em></dd>
@@ -10165,7 +11269,7 @@ mark { background: var(--highlight); border-radius: 2px; color: inherit; }
     </dd>
 
   </dl>
-  <div class="ch-nav-footer"><a class="ch-nav-link prev" href="#ch13"><span class="ch-nav-arrow">←</span><span class="ch-nav-text">Ch 13 · Strategy</span></a><div class="ch-nav-dot">◈</div><span></span></div>
+  <div class="ch-nav-footer"><a class="ch-nav-link prev" href="#ch14"><span class="ch-nav-arrow">←</span><span class="ch-nav-text">Ch 14 · Strategy</span></a><div class="ch-nav-dot">◈</div><span></span></div>
 </div>
 
 <!-- ══════════════ FOOTER ══════════════ -->
@@ -10174,7 +11278,7 @@ mark { background: var(--highlight); border-radius: 2px; color: inherit; }
     <div class="book-footer-title">Pharma R&amp;D, Commercial, Medical Affairs &amp; Market Access — The Complete Visual Guide</div>
     <div class="book-footer-author">Deepak Kumar — Pharma &amp; MedTech Consultant</div>
     <div class="book-footer-rule"></div>
-    <div>13 Chapters · SVG Process Diagrams · Interactive Glossary · Veeva Systems · Model N · Anaplan</div>
+    <div>14 Chapters · SVG Process Diagrams · Interactive Glossary · Veeva Systems · Model N · Anaplan</div>
     <div>FDA &amp; ICH Regulatory Frameworks · GxP · 21 CFR · AKS · Sunshine Act · PDMA · MDRP · 340B · IRA 2022 · PhRMA Code</div>
     <div style="margin-top:12px;opacity:.4;">May 2026 · All regulatory references reflect US FDA frameworks as of May 2026</div>
     <div class="book-footer-rule"></div>
